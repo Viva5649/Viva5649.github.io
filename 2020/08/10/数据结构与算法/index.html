@@ -82,7 +82,7 @@
 				  	
 				    <li><a href="/categories/Life/" class="animsition-link">Life<small>(3)</small></a></li>
 				    
-				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(1)</small></a></li>
+				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(2)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -152,8 +152,8 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2020-06-01T16:00:00.000Z" itemprop="datePublished">
-          2020-06-02
+      <time datetime="2020-08-09T16:00:00.000Z" itemprop="datePublished">
+          2020-08-10
       </time>
     
 </span>
@@ -189,19 +189,48 @@
 <p><strong>如何编写递归代码</strong><br>1、写出递推公式。<br>2、找到终止条件。<br>3、关键在于找到<strong>如何将大问题分解成小问题的规律</strong>。</p>
 <p><strong>思考技巧</strong><br>仅思考主问题和子问题之间的关系，不用关注子问题更下层的调用关系，不要试图用人脑去分解递归的每个步骤。</p>
 <p><strong>注意事项</strong><br>1、避免递归深度过大导致堆栈溢出（空间复杂度高）。<br>2、避免重复计算（函数调用耗时多）。</p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="1、排序算法的分析"><a href="#1、排序算法的分析" class="headerlink" title="1、排序算法的分析"></a>1、排序算法的分析</h3><p><strong>1.1</strong> 基本操作<br>1、元素的比较。<br>2、元素的交换或移动。</p>
+<p><strong>1.2</strong> 执行效率<br>1、最好情况、最坏情况、平均情况时间复杂度。<br>2、考虑时间复杂度的系数、常数、低阶。<br>3、元素的比较次数和移动次数。</p>
+<p><strong>1.3</strong> 内存消耗<br>原地排序算法：指空间复杂度为O(1)的排序算法。</p>
+<p><strong>1.4</strong> 稳定性<br>待排序的序列中存在值相等的元素，经过排序后，如果相等元素之间原有的先后顺序不变，则排序算法称为<strong>稳定排序算法</strong>，否则称为<strong>不稳定排序算法</strong>。</p>
+<p><strong>1.5</strong> 额外概念<br>1、有序度：数据中具有有序关系的元素对的个数。<br>2、逆序度：数据中不具有有序关系的元素对的个数。<br>3、满有序度：完全有序的数据的有序度，值为n*(n-1)/2。</p>
+<p><strong>1.6</strong> 备注<br>后续涉及的排序算法均以元素为数字的数组为例进行阐述。</p>
+<h3 id="2、冒泡排序"><a href="#2、冒泡排序" class="headerlink" title="2、冒泡排序"></a>2、冒泡排序</h3><p><strong>2.1</strong> 核心思想<br>每次只操作相邻的两个数据，若不满足关系，则将相邻元素交换。</p>
+<p><strong>2.2</strong> 实现思路<br>使用2个for循环，内部for循环每次执行完后，保证从数组尾部开始的元素是有序的，具体有序的元素的个数随着每次循环会增加。</p>
+<p><strong>2.3</strong> 时间复杂度<br>1、最好情况：O(n)；数组中的元素已有序，只需依次做比较操作。<br>2、最坏情况：O(n^2)；数组中的元素为倒序排列，要做n次冒泡操作。<br>3、平均情况：O(n^2)；满有序度 = n*(n-1)/2 = 有序度+逆序度；每交换一次，有序度+1，初始逆序度=总交换次数。</p>
+<h3 id="3、插入排序"><a href="#3、插入排序" class="headerlink" title="3、插入排序"></a>3、插入排序</h3><p><strong>3.1</strong> 核心思想<br>取“未排序区间”中的元素，在“已排序区间”中找到合适的位置将其插入（涉及数组元素的移动），并保证已排序区间中的元素一直有序，重复该过程，直到未排序区间为空为止。</p>
+<p><strong>3.2</strong> 实现思路<br>使用2个for循环，内部for循环执行完之后，保证从数组头部开始的元素是有序的，具体有序的元素的个数随着每次循环会增加。</p>
+<p><strong>3.3</strong> 时间复杂度<br>1、最好情况：O(n)；数组中的元素已有序，只需依次做比较操作。<br>2、最坏情况：O(n^2)；数组中的元素为倒序排列，需要大量移动数据。<br>3、平均情况：O(n^2)。</p>
+<p><strong>3.4</strong> 思考题：插入排序为何比冒泡排序更受欢迎？<br>1、冒泡排序的元素交换，会引入临时变量，进行3次赋值。<br>2、插入排序的元素移动，只进行1次赋值。</p>
+<h3 id="4、选择排序"><a href="#4、选择排序" class="headerlink" title="4、选择排序"></a>4、选择排序</h3><p><strong>4.1</strong> 核心思想<br>类似于插入排序，每次从未排序区间中找到最小的元素，放到已排序区间的末尾（涉及数组元素的交换）。</p>
+<p><strong>4.2</strong> 时间复杂度<br>1、最好情况：O(n^2)。<br>2、最坏情况：O(n^2)。<br>3、平均情况：O(n^2)。</p>
+<h3 id="5、归并排序"><a href="#5、归并排序" class="headerlink" title="5、归并排序"></a>5、归并排序</h3><p><strong>5.1</strong> 核心思想<br><strong>分治</strong>：将数组从中间分为前后两部分，对前后两部分别进行排序，再将排序好的两部分合并在一起；利用递归技巧，对于拆分后的部分进行再次拆分的操作。</p>
+<p><strong>5.2</strong> 时间复杂度（通过递归思想分解时间复杂度的组成部分得出）<br>1、最好情况：O(n <em> logn)。<br>2、最坏情况：O(n </em> logn)。<br>3、平均情况：O(n * logn)。</p>
+<p><strong>5.3</strong> 空间复杂度<br>每次合并时临时开辟的空间在使用完之后会被立即释放，临时内存空间最大不会超过n个数据的大小，空间复杂度为O(n)。</p>
+<h3 id="6、快速排序"><a href="#6、快速排序" class="headerlink" title="6、快速排序"></a>6、快速排序</h3><p><strong>6.1</strong> 核心思想<br><strong>分治</strong>：选择数组中任意一个元素的位置作为<strong>分区点</strong>，遍历数组，将小于分区点元素的元素放在其左边，将大于分区点元素的元素放在其右边；利用递归技巧对于分区后的数据再次进行分区操作。</p>
+<p><strong>6.2</strong> 完成原地分区的技巧<br>使用数组元素的交换来避免递归分区过程中占用很多临时的内存空间，空间复杂度为O(1)。</p>
+<p><strong>6.3</strong> 与归并排序的区别<br>1、归并排序：处理过程由下到上，子问题处理完后进行合并，一层一层往上。<br>2、快速排序：处理过程由上到下，先分区再处理子问题。</p>
+<p><strong>6.4</strong> 时间复杂度<br>1、最好情况：O(n <em> logn)。<br>2、最坏情况：O(n^2)。<br>3、平均情况：O(n </em> logn)。</p>
+<p><strong>6.5</strong> 特点<br>1、通用性好：覆盖场景广泛。<br>2、性能好：时间复杂度相对低；空间复杂度最低。</p>
+<p><strong>6.6</strong> 优化技巧<br>1、合理选择分区点：多数取中（取多个分布在区间全范围的值，取中间值）；随机（随机选择一个元素作为分区点）。<br>2、防止栈溢出：设置递归次数阈值；在堆上实现一个函数调用栈，模拟递归操作。</p>
+<h3 id="7、桶排序"><a href="#7、桶排序" class="headerlink" title="7、桶排序"></a>7、桶排序</h3><p><strong>7.1</strong> 核心思想<br>将要排序的数据分散到多个桶中，将每个桶里的数据单独进行排序，完成后，再把每个桶中的数据按照顺序取出，就组成了有序的数据。</p>
+<p><strong>7.2</strong> 应用场景<br>外部排序：数据存储在外部磁盘中，数据量较大，内存有限，无法将数据全部加载到内存中。</p>
+<p><strong>7.3</strong> 时间复杂度<br>O(n)：如果要排序的数据有n个，均匀分到m个桶内，每个桶里有k = n/m个元素。每个桶内使用快速排序，时间复杂度为O(k <em> logk)。m个桶的时间复杂度就是O(m </em> k <em> logk)，就是O(n </em> log(n/m))。当桶的个数接近数据个数n时，log(n/m)就是一个非常小的常量，这时候桶排序的时间复杂度接近O(n)。</p>
+<h3 id="8、计数排序"><a href="#8、计数排序" class="headerlink" title="8、计数排序"></a>8、计数排序</h3><p><strong>8.1</strong> 核心思想<br>一种特殊情况下的桶排序。若数据的最大值是k，把数据划分成k个桶，每个桶内的数据值都是相同的，省掉了桶内排序的时间。借助处理过的桶数组（索引对应了数据值，元素为小于等于该索引值的数据的个数），利用元素值来确定当前数据值在排序后数组中的位置（取数据时需要从原始数据的最后一个元素开始往前遍历，以保证稳定性），来给原始数据排序。</p>
+<p><strong>8.2</strong> 应用场景<br>要排序的n个数据，<strong>数据范围并不大</strong>的时候；只能给非负整数排序，如果要排序的数据是其他类型的，要将其在不改变相对大小的情况下，转化为非负整数。</p>
+<p><strong>8.3</strong> 时间复杂度<br>O(n)。</p>
+<h3 id="9、基数排序"><a href="#9、基数排序" class="headerlink" title="9、基数排序"></a>9、基数排序</h3><p><strong>9.1</strong> 核心思想<br>处理要排序的数据，位数不够的在后面补“0”。</p>
+<p><strong>9.2</strong> 应用场景<br>被排序的数据，可以分割出独立的“位”来比较，位与位之间有递进关系，每一位的数据范围不能太大。</p>
+<p><strong>9.3</strong> 时间复杂度<br>O(n)。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2020/07/12/2020上半年记/" style="float: left;">
-        ← 2020上半年记
-    </a>
     
-    
-    <a class="pull-right" href="/2020/05/31/动漫作品回忆篇(2) - 机动战士高达Seed Destiny/">
-        动漫作品回忆篇(2) - 机动战士高达Seed Destiny →
+    <a class="pull-right" href="/2020/08/02/区块链与比特币/">
+        区块链与比特币 →
     </a>
     
 </nav>
