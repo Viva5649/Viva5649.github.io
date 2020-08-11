@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>区块链与比特币 | Viva&#39;s Blog</title>
+  <title>设计模式（持续更新） | Viva&#39;s Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -152,37 +152,42 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2020-08-01T16:00:00.000Z" itemprop="datePublished">
-          2020-08-02
+      <time datetime="2020-08-10T16:00:00.000Z" itemprop="datePublished">
+          2020-08-11
       </time>
     
 </span>
-                <h1>区块链与比特币</h1>
+                <h1>设计模式（持续更新）</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="区块链与比特币"><a href="#区块链与比特币" class="headerlink" title="区块链与比特币"></a>区块链与比特币</h1><h2 id="1、比特币"><a href="#1、比特币" class="headerlink" title="1、比特币"></a>1、比特币</h2><p><strong>1.1</strong> 概念<br>一种数字货币。</p>
-<p><strong>1.2</strong> 特点<br>(1) 去中心化：没有中心的服务器，整个系统直接由用户端的电脑构成。<br>(2) 数据防篡改：所有交易记录全部保存，公开给所有人，支持被加密和验证。<br>(3) 固定的发行量：不会出现通货膨胀现象。</p>
-<p><strong>1.3</strong> 交易流程<br>(1) 需要交易的用户把交易传到网络中。<br>(2) 网络上有些机器叫记账结点，它们通过比拼计算力的方式来竞争记账权，该操作就叫“挖矿”。<br>(3) 获得记账权的结点，会把待记账的交易进行计算打包，并向全网广播。收到信的记账包的结点会对齐进行验证，验证成功后加入自己的区块。</p>
-<p><strong>1.4</strong> P2P去中心化网络的前提<br>网络中的任何结点都是不可信任的，它们中的任何一个都可能会作恶。</p>
-<p><strong>1.5</strong> 分布式账本系统的设计思想<br>任何人都可以拿到所有的数据，数据要能很容易地被验证是合法的且没有经过修改的，同时也要很难被修改。基于这样的设计，比特币使用了两个比较大的技术：<strong>区块链</strong>和<strong>工作量证明共识机制</strong>。</p>
-<h2 id="2、区块链"><a href="#2、区块链" class="headerlink" title="2、区块链"></a>2、区块链</h2><p><strong>2.1</strong> 概念<br>区块链包含了一个个的区块，每个区块中包含着一组交易信息。每个区块都会有一个ID（或是一个地址），这些区块通过记录前一个区块的ID来形成一条链。</p>
-<p><strong>2.2</strong> 特点<br>(1) 每个块的ID都是根据内容生成的，一旦内容发生了变化，ID就需要进行改变。<br>(2) 生成每个块的ID的内容包含了上一个块的ID，所以只要上一个块的内容变化了，上一个块的ID就会发生变化，当前块的ID也要变化。<br>(3) 越旧的区块越不容易被篡改，越安全；越新的区块越容易被篡改，越不安全。</p>
-<h2 id="3、工作量证明共识机制"><a href="#3、工作量证明共识机制" class="headerlink" title="3、工作量证明共识机制"></a>3、工作量证明共识机制</h2><p><strong>3.1</strong> 概念<br>用大规模的计算来找到一个符合系统要求的区块ID，要找到符合条件的区块ID只能通过暴力穷举的方式，因此要付出大量的系统计算资源和电力，这个花费大代价寻找合法区块ID的过程就称为“挖矿”。</p>
-<p><strong>3.2</strong> 特点<br>(1) 使区块数据的修改变得几乎不可能：篡改单个区块的成本已经很高了，再修改整个链的成本就更高了。<br>(2) 能掌握51%的算力的人几乎不可能存在：伪造一条链的成本很高，控制大多数人的算力也需要巨额的资金投入。<br>(3) 能够解决关于数据一致性的分歧：找到合法区块ID需要巨大的工作量，能够有效降低大家意见冲突的概率；即使同时出现了多个合法区块，因挖矿的成本过高，不可能同时跟进多个区块，大多数人选择的那个区块的链会越来越多，同时出现的另外合法区块也就无人问津从而作废了。</p>
+      		<p>最近在极客时间上学习设计模式的课程，整理一些心得体会吧。</p>
+<h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><h2 id="1、最功利的目标，应对面试"><a href="#1、最功利的目标，应对面试" class="headerlink" title="1、最功利的目标，应对面试"></a>1、最功利的目标，应对面试</h2><p>面试造火箭，进去拧螺丝，大环境就是这样。</p>
+<h2 id="2、写出高质量的代码"><a href="#2、写出高质量的代码" class="headerlink" title="2、写出高质量的代码"></a>2、写出高质量的代码</h2><p>在面对垃圾代码方面，与作者同感。目前在公司里维护的代码写的跟屎一样，层级繁琐，逻辑混乱，恨不得全部重构，代码质量都这么差了，上面的领导居然还想着要把多平台的代码进行合并，美其名曰提升维护效率，实际上只会make things worse。</p>
+<h2 id="3、提高复杂代码的设计和开发能力。"><a href="#3、提高复杂代码的设计和开发能力。" class="headerlink" title="3、提高复杂代码的设计和开发能力。"></a>3、提高复杂代码的设计和开发能力。</h2><p>从个人的编程经验来看，面对复杂架构时，大局观尤其重要。如何分层分模块，如何设计类与类之间的关系，如何做到高内聚低耦合等等问题，都需要在掌握一定的设计模式和编程思想的知识后，才能够游刃有余地进行处理。</p>
+<h2 id="4、更方便地读源码，学框架"><a href="#4、更方便地读源码，学框架" class="headerlink" title="4、更方便地读源码，学框架"></a>4、更方便地读源码，学框架</h2><p>这点感同身受，学好设计模式，夯实基本功，只有基本功足够扎实，面对优秀的源码时才能快速读懂其内容，并且get到其中的精髓。</p>
+<h2 id="5、为职场发展做铺垫"><a href="#5、为职场发展做铺垫" class="headerlink" title="5、为职场发展做铺垫"></a>5、为职场发展做铺垫</h2><p>纯管理的路线不太适合自己，还是比较倾向半技术半管理的发展方向。充分掌握和发挥设计模式的作用，有助于提升项目的整体代码质量，方便开发和维护工作；同时也能将高价值的内容分享给他人，更好地考察新人和培养新人。</p>
+<h1 id="代码质量的评价标准"><a href="#代码质量的评价标准" class="headerlink" title="代码质量的评价标准"></a>代码质量的评价标准</h1><h2 id="1、可维护性（maintainability）"><a href="#1、可维护性（maintainability）" class="headerlink" title="1、可维护性（maintainability）"></a>1、可维护性（maintainability）</h2><p>修改、添加和删除功能能够轻松完成，bug容易修复。</p>
+<h2 id="2、可读性（readability）"><a href="#2、可读性（readability）" class="headerlink" title="2、可读性（readability）"></a>2、可读性（readability）</h2><p>符合代码规范，命名合理，注释详细、函数内容合理、模块划分清晰。</p>
+<h2 id="3、可拓展性（extensibility）"><a href="#3、可拓展性（extensibility）" class="headerlink" title="3、可拓展性（extensibility）"></a>3、可拓展性（extensibility）</h2><p>添加新功能时，不需要改动大量代码。</p>
+<h2 id="4、灵活性（flexibility）"><a href="#4、灵活性（flexibility）" class="headerlink" title="4、灵活性（flexibility）"></a>4、灵活性（flexibility）</h2><p>代码易拓展，代码易复用，一套代码适用多种场景。</p>
+<h2 id="5、简洁性（simplicity）"><a href="#5、简洁性（simplicity）" class="headerlink" title="5、简洁性（simplicity）"></a>5、简洁性（simplicity）</h2><p>代码简单，逻辑清晰。<br>“思从深而行从简，真正的高手能云淡风轻地用最简单的方法解决最复杂的问题。”</p>
+<h2 id="6、可复用性（reusability）"><a href="#6、可复用性（reusability）" class="headerlink" title="6、可复用性（reusability）"></a>6、可复用性（reusability）</h2><p>面向对象特性（继承、多态），设计原则（单一职责原则），重构技巧（解耦、高内聚、模块化）。可复用性是很多设计原则、思想、模式所要达到的最终结果。</p>
+<h2 id="7、可测试性（testability）"><a href="#7、可测试性（testability）" class="headerlink" title="7、可测试性（testability）"></a>7、可测试性（testability）</h2><p>从侧面反映了代码质量的好坏。</p>
+<h1 id="编程方法论"><a href="#编程方法论" class="headerlink" title="编程方法论"></a>编程方法论</h1><h2 id="1、面向对象"><a href="#1、面向对象" class="headerlink" title="1、面向对象"></a>1、面向对象</h2><p>面向对象是目前主流的编程风格，其四大特性（封装、抽象、继承、多态）可以实现很多复杂的设计思路，是很多设计原则和设计模式实现的基础。</p>
+<h2 id="2、设计原则"><a href="#2、设计原则" class="headerlink" title="2、设计原则"></a>2、设计原则</h2><p>设计原则是代码设计方面的一些经验总结，常见的有SOLID原则、DRY原则、KISS原则、YAGNI原则和LOD原则。</p>
+<h2 id="3、设计模式"><a href="#3、设计模式" class="headerlink" title="3、设计模式"></a>3、设计模式</h2><p>设计模式是针对软件开发中常遇到的问题，总结出来的一套解决方案或者设计思路，大部分设计模式主要解决的是代码的可拓展性问题。</p>
+<h2 id="4、编程规范"><a href="#4、编程规范" class="headerlink" title="4、编程规范"></a>4、编程规范</h2><p>编程规范主要解决的是代码的可读性问题，例如如何给类、函数、变量命名，如何写代码注释，函数不宜过长，参数不能过多等等内容。</p>
+<h2 id="5、重构"><a href="#5、重构" class="headerlink" title="5、重构"></a>5、重构</h2><p>重构是软件开发中极其重要的环节，持续重构是保持代码质量不下降的有效手段。针对原先设计满足不了新需求的问题，就需要进行重构。重构时需要使用到面向对象、设计原则、设计模式和编程规范这些理论。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2020/08/10/数据结构与算法/" style="float: left;">
-        ← 数据结构与算法（持续更新）
-    </a>
     
-    
-    <a class="pull-right" href="/2020/07/12/2020上半年记/">
-        2020上半年记 →
+    <a class="pull-right" href="/2020/08/10/数据结构与算法/">
+        数据结构与算法（持续更新） →
     </a>
     
 </nav>
