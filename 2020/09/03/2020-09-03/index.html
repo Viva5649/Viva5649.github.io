@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>设计模式（持续更新） | Viva&#39;s Blog</title>
+  <title>Thu Sep 03 2020 00:00:00 GMT+0800 (CST) | Viva&#39;s Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -56,6 +56,8 @@
   
 
   <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+<link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 <!--
@@ -80,7 +82,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/Life/" class="animsition-link">Life<small>(3)</small></a></li>
+				    <li><a href="/categories/Life/" class="animsition-link">Life<small>(4)</small></a></li>
 				    
 				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(3)</small></a></li>
 				    
@@ -152,42 +154,55 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2020-08-10T16:00:00.000Z" itemprop="datePublished">
-          2020-08-11
+      <time datetime="2020-09-02T16:00:00.000Z" itemprop="datePublished">
+          2020-09-03
       </time>
     
 </span>
-                <h1>设计模式（持续更新）</h1>
+                <h1>Thu Sep 03 2020 00:00:00 GMT+0800 (CST)</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>最近在极客时间上学习设计模式的课程，整理一些心得体会吧。</p>
-<h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><h2 id="1、最功利的目标，应对面试"><a href="#1、最功利的目标，应对面试" class="headerlink" title="1、最功利的目标，应对面试"></a>1、最功利的目标，应对面试</h2><p>面试造火箭，进去拧螺丝，大环境就是这样。</p>
-<h2 id="2、写出高质量的代码"><a href="#2、写出高质量的代码" class="headerlink" title="2、写出高质量的代码"></a>2、写出高质量的代码</h2><p>在面对垃圾代码方面，与作者同感。目前在公司里维护的代码写的跟屎一样，层级繁琐，逻辑混乱，恨不得全部重构，代码质量都这么差了，上面的领导居然还想着要把多平台的代码进行合并，美其名曰提升维护效率，实际上只会make things worse。</p>
-<h2 id="3、提高复杂代码的设计和开发能力。"><a href="#3、提高复杂代码的设计和开发能力。" class="headerlink" title="3、提高复杂代码的设计和开发能力。"></a>3、提高复杂代码的设计和开发能力。</h2><p>从个人的编程经验来看，面对复杂架构时，大局观尤其重要。如何分层分模块，如何设计类与类之间的关系，如何做到高内聚低耦合等等问题，都需要在掌握一定的设计模式和编程思想的知识后，才能够游刃有余地进行处理。</p>
-<h2 id="4、更方便地读源码，学框架"><a href="#4、更方便地读源码，学框架" class="headerlink" title="4、更方便地读源码，学框架"></a>4、更方便地读源码，学框架</h2><p>这点感同身受，学好设计模式，夯实基本功，只有基本功足够扎实，面对优秀的源码时才能快速读懂其内容，并且get到其中的精髓。</p>
-<h2 id="5、为职场发展做铺垫"><a href="#5、为职场发展做铺垫" class="headerlink" title="5、为职场发展做铺垫"></a>5、为职场发展做铺垫</h2><p>纯管理的路线不太适合自己，还是比较倾向半技术半管理的发展方向。充分掌握和发挥设计模式的作用，有助于提升项目的整体代码质量，方便开发和维护工作；同时也能将高价值的内容分享给他人，更好地考察新人和培养新人。</p>
-<h1 id="代码质量的评价标准"><a href="#代码质量的评价标准" class="headerlink" title="代码质量的评价标准"></a>代码质量的评价标准</h1><h2 id="1、可维护性（maintainability）"><a href="#1、可维护性（maintainability）" class="headerlink" title="1、可维护性（maintainability）"></a>1、可维护性（maintainability）</h2><p>修改、添加和删除功能能够轻松完成，bug容易修复。</p>
-<h2 id="2、可读性（readability）"><a href="#2、可读性（readability）" class="headerlink" title="2、可读性（readability）"></a>2、可读性（readability）</h2><p>符合代码规范，命名合理，注释详细、函数内容合理、模块划分清晰。</p>
-<h2 id="3、可拓展性（extensibility）"><a href="#3、可拓展性（extensibility）" class="headerlink" title="3、可拓展性（extensibility）"></a>3、可拓展性（extensibility）</h2><p>添加新功能时，不需要改动大量代码。</p>
-<h2 id="4、灵活性（flexibility）"><a href="#4、灵活性（flexibility）" class="headerlink" title="4、灵活性（flexibility）"></a>4、灵活性（flexibility）</h2><p>代码易拓展，代码易复用，一套代码适用多种场景。</p>
-<h2 id="5、简洁性（simplicity）"><a href="#5、简洁性（simplicity）" class="headerlink" title="5、简洁性（simplicity）"></a>5、简洁性（simplicity）</h2><p>代码简单，逻辑清晰。<br>“思从深而行从简，真正的高手能云淡风轻地用最简单的方法解决最复杂的问题。”</p>
-<h2 id="6、可复用性（reusability）"><a href="#6、可复用性（reusability）" class="headerlink" title="6、可复用性（reusability）"></a>6、可复用性（reusability）</h2><p>面向对象特性（继承、多态），设计原则（单一职责原则），重构技巧（解耦、高内聚、模块化）。可复用性是很多设计原则、思想、模式所要达到的最终结果。</p>
-<h2 id="7、可测试性（testability）"><a href="#7、可测试性（testability）" class="headerlink" title="7、可测试性（testability）"></a>7、可测试性（testability）</h2><p>从侧面反映了代码质量的好坏。</p>
-<h1 id="编程方法论"><a href="#编程方法论" class="headerlink" title="编程方法论"></a>编程方法论</h1><h2 id="1、面向对象"><a href="#1、面向对象" class="headerlink" title="1、面向对象"></a>1、面向对象</h2><p>面向对象是目前主流的编程风格，其四大特性（封装、抽象、继承、多态）可以实现很多复杂的设计思路，是很多设计原则和设计模式实现的基础。</p>
-<h2 id="2、设计原则"><a href="#2、设计原则" class="headerlink" title="2、设计原则"></a>2、设计原则</h2><p>设计原则是代码设计方面的一些经验总结，常见的有SOLID原则、DRY原则、KISS原则、YAGNI原则和LOD原则。</p>
-<h2 id="3、设计模式"><a href="#3、设计模式" class="headerlink" title="3、设计模式"></a>3、设计模式</h2><p>设计模式是针对软件开发中常遇到的问题，总结出来的一套解决方案或者设计思路，大部分设计模式主要解决的是代码的可拓展性问题。</p>
-<h2 id="4、编程规范"><a href="#4、编程规范" class="headerlink" title="4、编程规范"></a>4、编程规范</h2><p>编程规范主要解决的是代码的可读性问题，例如如何给类、函数、变量命名，如何写代码注释，函数不宜过长，参数不能过多等等内容。</p>
-<h2 id="5、重构"><a href="#5、重构" class="headerlink" title="5、重构"></a>5、重构</h2><p>重构是软件开发中极其重要的环节，持续重构是保持代码质量不下降的有效手段。针对原先设计满足不了新需求的问题，就需要进行重构。重构时需要使用到面向对象、设计原则、设计模式和编程规范这些理论。</p>
+      		<p>杭州从9月开始总算凉快一点了，也算是入秋了吧，每天晚上开车时开着窗吹风也挺享受的。最近压力总算是小一点了，前段时间，紧急任务和集成测试搞的精神压力很大，加上老婆的孕吐反应达到了一个高潮，的确是一段比较难熬的时间，好在已经顺利度过了。</p>
+<p>老婆现在怀孕第11周了，孕吐反应依旧很大，人也难受没胃口，这个孩子把她母亲折腾成这样，等它长大了一定要把它母亲现在的遭遇详细地说给它听，希望老婆的身体感觉好起来吧。</p>
+<p>最近利用碎片时间又看了一遍神探夏洛克，看了这么多福尔摩斯，不管是电视剧还是电影，感觉还是这部最有味道。关于像Sherlock这样的人，有3点令我特别羡慕：1、绝佳的视力，总能看到别人难以发现的细节；2、敏捷而缜密的思维，能够将许多看似毫不关联的事情组合在一起发现背后的真相；3、过目不忘的记忆力，利用“思维宫殿”将所见所闻全部记忆在脑子里。每次看完一集，都感觉自己的脑子也活跃了起来，睡下去之后也在脑子里不停地思考问题，可能自己对这种感觉比较上瘾吧。</p>
+<p>最近在公众号上接触到了免费的理财入门课程，带着尝试一下的心态也就开始学了起来，内容不多，每天一节课，10天也就学完了。现在虽然还没学完，但是感触却很深，要正确的进行投资理财，比学习知识更重要的是思想和观念。最好的投资便是投资自己、不懂的不乱碰、培养良好的花钱习惯，都是我比较感同身受的。</p>
+<p>人总是会后悔，后悔为什么自己没有早点开始做些什么事。实际上完全没有后悔的必要，因为在不同的生活阶段，总是需要不同的事物来给予自己一些正反馈，来驱动自己去做做一些事情。就拿我自己来说，我现在总是会后悔读大学的时候为什么没有好好学习数据结构、计算机网络这些基础课，为什么当时没有在网络上自学更多的知识而是花费了大量时间来打游戏。还会后悔为什么最开始工作的时候，没有开始写博客和技术文章，没有去学习开源框架。实际上，很多事情跟人所处的大环境有很大的关系的，一个稳定的环境对人来说十分的重要。直到结完婚跟老婆住进新房后，我才能找出大片完整的时间来做与一些自我提升有关的事情，当然也花了不少时间满足了自己关于游戏的欲望，不过也彻底想明白了玩游戏对于我来说到底是意味着什么。在经过一些阅历的积累之后，对周遭事物也有了新的思考，看问题的角度也越来越多，视野也越来越广。有些事情，可能就是等到某个特定的时候，才能让人恍然大悟。</p>
+<p>人又总是不满足，有了这个想要那个。我现在一方面感觉自己很幸福，作为一个普通老百姓，跟老婆有个幸福的小家，有房有车无负债，物质条件上我已经很满足了；另一方面又会觉得时间特别不够用，恨不得每天多出2个小时多写点代码，多琢磨几道算法题，多拼一会LEGO，多研究点理财知识。</p>
+<p>不知道为什么，人已经很困了，但是脑子突然特别的活跃，有许多想法在脑海中一闪而过，感觉自己比以前好的一点就是，现在会将脑子里思考过的东西全都记录下来，而不是“等有空了再说”，也希望自己能够坚持下去吧。</p>
 
+        <div id="aplayer-EIvFiHqc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-EIvFiHqc"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "UNICORN",
+              author: "澤野弘之",
+              url: "http://music.163.com/song/media/outer/url?id=499009.mp3",
+              pic: "http://p2.music.126.net/z7Mk6Au_otaoWozoM-t62w==/2402432906715323.jpg",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
+    <a class="pull-left" href="/2020/09/15/数据结构与算法/" style="float: left;">
+        ← 数据结构与算法（持续更新）
+    </a>
     
-    <a class="pull-right" href="/2020/08/10/数据结构与算法/">
-        数据结构与算法（持续更新） →
+    
+    <a class="pull-right" href="/2020/08/02/区块链与比特币/">
+        区块链与比特币 →
     </a>
     
 </nav>

@@ -80,7 +80,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/Life/" class="animsition-link">Life<small>(3)</small></a></li>
+				    <li><a href="/categories/Life/" class="animsition-link">Life<small>(4)</small></a></li>
 				    
 				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(3)</small></a></li>
 				    
@@ -152,8 +152,8 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2020-08-09T16:00:00.000Z" itemprop="datePublished">
-          2020-08-10
+      <time datetime="2020-09-14T16:00:00.000Z" itemprop="datePublished">
+          2020-09-15
       </time>
     
 </span>
@@ -167,7 +167,7 @@
 <p><strong>1.4</strong> 细分<br>(1) 最好情况时间复杂度：最理想情况下，执行代码的时间复杂度。<br>(2) 最坏情况时间复杂度：最糟糕情况下，执行代码的时间复杂度。<br>(3) 平均情况时间复杂度：根据概率计算得出的加权平均时间复杂度（期望时间复杂度）。<br>(4) 均摊时间复杂度：通过摊还分析方法得到，可以将时间复杂度高的操作，平摊到其他时间复杂度较低的操作上，用于特殊场景（对于一个数据结构的一组连续操作中，大部分情况下时间复杂度很低，个别情况下时间复杂度较高，且操作前后连贯具有一定规律性）。</p>
 <h2 id="2、空间复杂度"><a href="#2、空间复杂度" class="headerlink" title="2、空间复杂度"></a>2、空间复杂度</h2><p><strong>2.1</strong> 概念<br>反映的是<strong>算法的存储空间与数据规模之间的增长关系</strong>。</p>
 <p><strong>2.2</strong> 常见空间复杂度<br>O(n ^ 2) &gt; O(n) &gt; O(1)</p>
-<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><h3 id="1、数组"><a href="#1、数组" class="headerlink" title="1、数组"></a>1、数组</h3><p><strong>1.1</strong> 概念<br>一种线性表数据结构，使用一组连续的内存空间，来存储一组具有相同类型的数据。</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><h3 id="1、数组"><a href="#1、数组" class="headerlink" title="1、数组"></a>1、数组</h3><p><strong>1.1</strong> 概念<br>一种线性表数据结构，使用一组<strong>连续</strong>的内存空间，来存储一组具有相同类型的数据。</p>
 <p><strong>1.2</strong> 特点<br>(1) 随机访问<br>根据数组首地址，被访问元素的下标和数据类型的长度，可以<strong>高效</strong>地访问到特定的元素，时间复杂度为O(1)。<br>(2) 插入<br>元素有序：在数组中间插入和删除时可能涉及多个元素的数据搬运。<br>元素无序：插入时将指定位置的已有元素移到数组尾部，再将新元素插入指定位置以提升效率。<br>(3) 删除<br>删除元素时为了保证数组中数据的连续性，不可避免地要进行数据搬运（删除最后一个元素这种情况除外）。可以每次先记录下要删除的数据，在数据没有更多空间时，再进行真正的删除操作，减少大量数据搬运的次数。</p>
 <p><strong>1.3</strong> 思考题：数组下标为何从0开始？<br>当下标从0开始时，寻址公式伪代码为<code>a[i]_address = base_address + i * data_type_size;</code><br>当下标从1开始时，寻址公式伪代码为<code>a[i]_address = base_address + (i-1) * data_type_size;</code><br>对比后可以看出，当下标不为0时，每次随机访问，都需要额外做一次减法操作，为了将效率优化到极致，数组采取了下标从0开始的做法。</p>
 <h3 id="2、链表"><a href="#2、链表" class="headerlink" title="2、链表"></a>2、链表</h3><p><strong>2.1</strong> 概念<br>一种线性表数据结构，通过“指针”将一组零散的内存块（结点）串联起来使用。</p>
@@ -185,6 +185,10 @@
 <p><strong>4.2</strong> 特点<br>(1) 入队时将元素插入队列尾部，出队时从队列头部读取元素。<br>(2) 先进先出，后进后出。</p>
 <p><strong>4.3</strong> 分类<br>(1) 循环队列<br>能够避免入队操作时可能触发的数据搬移，若用数组实现，会浪费一个存储空间。<br>队列为空的判断条件：head == tail。<br>队列为满的判断条件：(tail + 1) % n == head。<br>入队时，tail = (tail + 1) % n。<br>出队时，head = (head + 1) % n。<br>(2) 阻塞队列<br>当队列为空时，从队列头部取数据会被阻塞，直到队列中有数据才会取出数据并返回。<br>当队列已满时，在队列尾部插入数据会被阻塞，直到队列中有空闲位置才会插入数据并返回。<br>(3) 并发队列<br>线程安全的队列。<br>基于数组的循环队列，利用CAS原子操作，可以实现非常高效的并发队列。</p>
 <p><strong>4.4</strong> 思考题：线程池没有空闲线程时，新的任务请求线程资源，线程池该如何处理？<br>策略分为2种<br>(1) 非阻塞：直接拒绝任务请求。<br>(2) 阻塞：使用队列来保存请求，有空闲线程时，再从队列中取出请求继续处理。<br>对于阻塞式的策略，基于数组实现的有边界队列更加合适，当已排队的请求数量达到队列大小时，新来的请求会被拒绝，设置合理的队列大小十分关键。</p>
+<h3 id="5、跳表"><a href="#5、跳表" class="headerlink" title="5、跳表"></a>5、跳表</h3><p><strong>5.1</strong> 概念<br>1、在链表的基础上，增加多级索引结构。<br>2、每x个节点中抽出一个结点作为上一级索引的结点，x一般为2，为了节省空间可以使用更大的值。<br>3、在每层索引的基础上继续向上构建索引，直到最顶层索引结点的个数到x为止。</p>
+<p><strong>5.2</strong> 特点<br>假设抽取规则中x为2<br>1、第k级索引格式是第k-1级索引的结点个数的1/2，第k级索引结点个数是n/(2^k)。<br>2、假设索引有k层，最高级的索引层有2个结点，则n/(2^k) = 2，每层只需要遍历（x + 1）个结点，其时间复杂度为O(logn)。<br>3、索引占用的空间大小为n/2 + n/4 + … + 4 + 2，需要额外用接近n个结点的存储空间，空间复杂度为O(n)。</p>
+<p><strong>5.3</strong> 动态更新  </p>
+<p>1、插入时，可以通过一个随机函数，来决定将当前结点插入到哪几级索引中（比如随机函数生成了值k，那就将该结点添加到第1级至第k级这些索引中）。<br>2、删除时，不仅要删除原始链表中的结点，还要删除索引中的结点。</p>
 <h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p><strong>满足条件</strong><br>1、一个问题的解可以分解为几个子问题的解。<br>2、主问题和分解之后的子问题，除了数据规模不同，求解思路完全一样。<br>3、存在递归终止条件。</p>
 <p><strong>如何编写递归代码</strong><br>1、写出递推公式。<br>2、找到终止条件。<br>3、关键在于找到<strong>如何将大问题分解成小问题的规律</strong>。</p>
 <p><strong>思考技巧</strong><br>仅思考主问题和子问题之间的关系，不用关注子问题更下层的调用关系，不要试图用人脑去分解递归的每个步骤。</p>
@@ -222,19 +226,23 @@
 <h3 id="9、基数排序"><a href="#9、基数排序" class="headerlink" title="9、基数排序"></a>9、基数排序</h3><p><strong>9.1</strong> 核心思想<br>处理要排序的数据，位数不够的在后面补“0”。</p>
 <p><strong>9.2</strong> 应用场景<br>被排序的数据，可以分割出独立的“位”来比较，位与位之间有递进关系，每一位的数据范围不能太大。</p>
 <p><strong>9.3</strong> 时间复杂度<br>O(n)。</p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h3 id="1、二分查找"><a href="#1、二分查找" class="headerlink" title="1、二分查找"></a>1、二分查找</h3><p><strong>1.1</strong> 核心思想<br>每次通过与区间的中间元素进行对比，将查找范围缩小一半，直到查到指定元素或区间被缩小为0。</p>
+<p><strong>1.2</strong> 应用场景<br>1、数据存储在顺序表结构中（数组，能够通过下标进行随机访问）。<br>2、数据必须是有序的。<br>3、数据量适中（太小的话时间上相比顺序遍历没有优势，太大的话对于内存要求过高）。</p>
+<p><strong>1.3</strong> 变形问题<br>常用于有序集合（从小到大排列）中存在重复元素的场景。<br>注意细节：终止条件、区间上下边界更新方法、返回值选择。<br>1、查找第一个 值<strong>等于</strong>指定值的元素。<br>思路：查找到给定值的时候，判断当前位置的前一个元素的值是否也为给定值。<br>2、查找最后一个 值<strong>等于</strong>给定值的元素。<br>思路：与查找第一个符合条件的元素相似，查找到指定值的时候，判断当前位置的后一个元素的值是否也为指定值。<br>3、查找第一个 值<strong>大于等于</strong>给定值的元素。<br>思路：每当查找到给定值的位置，判断其前一个元素的值是否小于给定值。<br>4、查找最后一个 值<strong>小于等于</strong>给定值的元素。<br>思路：每当查找到给定值的位置，判断其后一个元素值是否大于给定值。</p>
+<p><strong>1.4</strong> 时间复杂度<br>O(logn)。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2020/08/11/设计模式/" style="float: left;">
+    <a class="pull-left" href="/2020/09/16/设计模式/" style="float: left;">
         ← 设计模式（持续更新）
     </a>
     
     
-    <a class="pull-right" href="/2020/08/02/区块链与比特币/">
-        区块链与比特币 →
+    <a class="pull-right" href="/2020/09/03/2020-09-03/">
+        Thu Sep 03 2020 00:00:00 GMT+0800 (CST) →
     </a>
     
 </nav>
