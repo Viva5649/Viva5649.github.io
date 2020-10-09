@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>设计模式与范式（持续更新） | Viva&#39;s Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Viva's Blog">
+    <meta name="author" content="Viva">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Viva&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Life/" class="animsition-link">Life<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(5)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo_new.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Viva's Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2020-10-08T16:00:00.000Z" itemprop="datePublished">
+          2020-10-09
+      </time>
+    
+</span>
+                <h1>设计模式与范式（持续更新）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="设计模式与范式"><a href="#设计模式与范式" class="headerlink" title="设计模式与范式"></a>设计模式与范式</h1><h2 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h2><p>创建型模式主要解决<strong>对象的创建</strong>问题，封装复杂的创建过程，解耦对象的创建逻辑和使用逻辑。</p>
+<h3 id="1、单例模式"><a href="#1、单例模式" class="headerlink" title="1、单例模式"></a>1、单例模式</h3><p><strong>1.1</strong> 概念<br>(1)一个类只允许创建一个对象（实例），该类就是一个单例类。<br>(2)常见的唯一性作用范围：进程。进程内唯一，进程间不唯一。</p>
+<p><strong>1.2</strong> 分类<br><strong>饿汉式</strong><br>(1)在类加载的时候，instance静态实例就已经创建并初始化好。<br>(2)创建过程线程安全，避免了用到时再初始化可能导致的性能问题。<br>(3)不支持延迟加载，存在在不需要的时候占用资源的问题。<br><strong>懒汉式</strong><br>(1)用到时再创建instance并初始化。<br>(2)获取instance时加锁来保证线程安全，并发环境下频繁获取instance可能导致性能问题。<br>(3)支持延迟加载。<br><strong>双重检测</strong><br>(1)在懒汉模式的基础上，只有在instance未创建时，才进行加锁操作。<br>(2)避免了懒汉式在并发情况下的性能问题。<br>(3)支持延迟加载。</p>
+<p><strong>1.3</strong> 应用场景（通常从单个类的角度进行考虑）<br>(1)需要解决资源访问冲突。<br>(2)某些数据只应保存一份。</p>
+<p><strong>1.4</strong> 缺点<br>(1)对于OOP中的抽象、继承、多态等特性支持不友好。<br>(2)会隐藏类之间的依赖关系（需要从函数实现中去发现依赖关系）。<br>(3)对代码的拓展性不友好。<br>(4)对代码的可测试性不友好。<br>(5)不支持带参数的构造函数。</p>
+<p><strong>1.5</strong> 代替方案<br>(1)工厂模式。<br>(2)IOC容器。</p>
+<h3 id="2、工厂模式"><a href="#2、工厂模式" class="headerlink" title="2、工厂模式"></a>2、工厂模式</h3><p><strong>2.1</strong> 概念<br>将对象（实例）的初始化操作封装在工厂类中，避免出现复杂冗长的初始化代码。</p>
+<p><strong>2.2</strong> 分类<br><strong>简单工厂</strong><br>同一种种类下，有多个不同类型的对象，单个对象的创建比较简单时，将多个对象的创建放在工厂类的函数中，对于多分支进行判断。<br><strong>工厂方法</strong><br>同一种种类下，有多个不同类型的对象，单个对象的创建比较复杂时，每个工厂类中只保留单个对象的创建，为工厂类再创建一个简单工厂，将对分支判断放在工厂的工厂中（可使用map来缓存特定工厂类的对象）。<br><strong>抽象工厂</strong><br>让一个工厂负责创建多个不同种类的对象。</p>
+<p><strong>2.3</strong> 应用场景（通常从一组类的角度进行考虑）<br>(1)代码中存在分支判断，需要动态根据不同类型创建不同的对象。<br>(2)单个对象本身的创建过程比较复杂。</p>
+<p><strong>2.4</strong> 作用<br>(1)封装变化：创建逻辑对于调用者透明。<br>(2)代码复用：创建逻辑抽离到独立的工厂类中后可以复用。<br>(3)隔离复杂性，封装复杂的创建逻辑。<br>(4)控制复杂性：将创建代码抽离，让原本的函数或类的职责更单一。</p>
+<h3 id="3、构建者模式"><a href="#3、构建者模式" class="headerlink" title="3、构建者模式"></a>3、构建者模式</h3><p><strong>3.1</strong> 概念<br>先创建构建者，将一些必要的属性值通过set函数设置给构建者，然后使用构建者提供的build函数来创建真正的对象，在build函数中做一些参数校验等复杂逻辑操作。</p>
+<p><strong>3.2</strong> 应用场景（通常从单个类的角度进行考虑）<br>(1)当类中属性过多。<br>(2)类的属性之间有一定的依赖关系或约束条件的时候。<br>(3)类的对象（实例）需要是不可变的。</p>
+<p><strong>3.3</strong> 作用<br>创建一种类型的复杂对象，通过设置不同的可选参数，“定制化”地创建不同的对象。</p>
+<h3 id="4、原型模式"><a href="#4、原型模式" class="headerlink" title="4、原型模式"></a>4、原型模式</h3><p><strong>4.1</strong> 概念<br>使用已有对象进行复制来创建新对象。</p>
+<p><strong>4.2</strong> 应用场景<br>(1)对象的创建成本比较大（对象的创建逻辑中涉及复杂计算、慢速IO操作）。<br>(2)同一个类的不同对象之间差别不大。</p>
+<h2 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h2><p>结构型模式主要总结了一些<strong>类或对象组合</strong>在一起的经典结构，可以解决特定应用场景的问题。</p>
+<h3 id="1、代理模式"><a href="#1、代理模式" class="headerlink" title="1、代理模式"></a>1、代理模式</h3><p><strong>1.1</strong> 概念<br>(1)在不改变原始类代码的情况下，通过引入代理类来给原始类添加功能。<br>(2)主要作用是<strong>控制访问</strong>。</p>
+<p><strong>1.2</strong> 实现方式<br>(1)代理类与原始类实现相同的接口（协议），对于第三方或非本模块的类不适用。<br>(2)代理类继承自原始类。<br>(3)在运行时实现动态代理，使用Java的反射语法（将原始类的函数执行与代理类的函数执行进行绑定）、Objective-C的Runtime（方法交换）。</p>
+<p><strong>1.3</strong> 应用场景<br>(1)业务系统中存在非功能性需求开发。<br>(2)在RPC框架中的应用（远程代理，把网络通信、数据编解码等细节隐藏起来，客户端使用RPC服务的时候，就像使用本地函数一样，无需了解与服务器交互的细节）。<br>(3)在缓存中的应用（针对需要支持缓存的接口，动态创建代理类来实现缓存功能）。</p>
+<h3 id="2、桥连模式"><a href="#2、桥连模式" class="headerlink" title="2、桥连模式"></a>2、桥连模式</h3><p><strong>2.1</strong> 概念<br>(1)将“抽象”（只包含骨架代码的类）和“实现”（具有真正业务逻辑的类）解耦，让他们可以独立变化。<br>(2)若一个类存在多个独立变化的维度，通过组合的方式，让多个维度可以独立进行拓展，类似于“组合优于继承”的原则。</p>
+<h3 id="3、装饰器模式"><a href="#3、装饰器模式" class="headerlink" title="3、装饰器模式"></a>3、装饰器模式</h3><p><strong>3.1</strong> 概念<br>(1)通过组合来替代继承，主要作用是给原始类添加<strong>增强功能</strong>。<br>(2)主要作用是解决继承关系过于复杂的问题。</p>
+<p><strong>3.2</strong> 特点<br>(1)装饰器类和原始类继承自通用的父类，可以在原始类基础上实现多个平行的装饰器类。<br>(2)装饰类体现了对于原始类功能的<strong>增强</strong>。</p>
+<h3 id="4、适配器模式"><a href="#4、适配器模式" class="headerlink" title="4、适配器模式"></a>4、适配器模式</h3><p><strong>4.1</strong> 概念<br>一种事后的补救策略：将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类可以一起工作。</p>
+<p><strong>4.2</strong> 分类<br><strong>类适配器</strong><br>(1)使用继承关系来实现。<br>(2)不兼容的接口之间定义大部分相同，可发挥继承关系中复用代码的优势。<br><strong>对象适配器</strong><br>(1)使用组合关系来实现。<br>(2)不兼容的接口之间定义大部分不相同，组合结构比继承更加灵活。</p>
+<p><strong>4.3</strong> 应用场景<br>(1)封装有缺陷的接口设计。<br>(2)统一多个类的接口设计。<br>(3)替换依赖的外部系统。<br>(4)兼容老版本接口。<br>(5)适配不同格式的数据。</p>
+<h3 id="5、门面模式"><a href="#5、门面模式" class="headerlink" title="5、门面模式"></a>5、门面模式</h3><p><strong>5.1</strong> 概念<br>为子系统提供一组统一的接口，定义一组高层接口让子系统使用起来更方便。</p>
+<p><strong>5.2</strong> 应用场景<br>(1)解决<strong>易用性</strong>问题。<br>(2)解决性能问题。<br>(3)解决分布式事务问题。</p>
+<h3 id="6、组合模式"><a href="#6、组合模式" class="headerlink" title="6、组合模式"></a>6、组合模式</h3><p><strong>6.1</strong> 概念<br>将一组对象组织成树形结构，以表示一种“部分-整体”的层次结构，让开发者可以统一单个对象和组合对象的处理逻辑（对于业务场景的一种数据结构和算法的抽象）。</p>
+<p><strong>6.2</strong> 应用场景<br>(1)文件系统（文件和文件夹的结构）。<br>(2)业务中单个对象和组合对象都可看作树中的结点，可以统一处理逻辑，简化代码实现。</p>
+<h3 id="7、享元模式"><a href="#7、享元模式" class="headerlink" title="7、享元模式"></a>7、享元模式</h3><p><strong>7.1</strong> 概念<br>(1)若一个系统中存在大量重复的不可变对象，可以在内存中只保留一份实例，供多处代码引用。<br>(2)主要作用是<strong>共享</strong>对象，节省内存。</p>
+<p><strong>7.2</strong> 实现方式<br>使用Map来存储已经创建过的享元对象，通过工厂模式对外提供对象。</p>
+<p><strong>7.3</strong> 应用场景<br>(1)棋牌游戏（固定数量的棋子和牌面）。<br>(2)文本编辑（文字格式）。</p>
+<p><strong>7.4</strong> 注意事项<br>(1)与单例的区别：单例或多例在设计意图上是为了限制对象的个数；享元模式中一个类能创建多个对象，设计意图在于复用对象，节省内存。<br>(2)与缓存的区别：日常所说的缓存更注重提升访问效率；而享元模式更注重复用对象。<br>(3)与对象池的区别：对象池的“复用”可以理解为“重复使用”，主要目的是节省时间；享元模式中的“复用”可以理解为“共享使用”，主要目的是节省空间。</p>
+<h2 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h2><p>行为型模式主要解决<strong>类或对象之间的交互</strong>问题。</p>
+<h3 id="1、观察者模式"><a href="#1、观察者模式" class="headerlink" title="1、观察者模式"></a>1、观察者模式</h3>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/10/09/设计原则与思想/" style="float: left;">
+        ← 设计原则与思想（持续更新）
+    </a>
+    
+    
+    <a class="pull-right" href="/2020/10/06/数据结构/">
+        数据结构（持续更新） →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Viva. All Rights Reserved.
+                </p>
+                <a href="http://www.beian.miit.gov.cn" style="color: #767D84">浙ICP备20020134号</a>
+                <!-- <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p> -->
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
