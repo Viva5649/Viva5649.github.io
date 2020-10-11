@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>区块链与比特币 | Viva&#39;s Blog</title>
+  <title>解读GPUImage框架的滤镜功能 | Viva&#39;s Blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -150,37 +150,41 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2020-08-01T16:00:00.000Z" itemprop="datePublished">
-          2020-08-02
+      <time datetime="2020-05-18T16:00:00.000Z" itemprop="datePublished">
+          2020-05-19
       </time>
     
 </span>
-                <h1>区块链与比特币</h1>
+                <h1>解读GPUImage框架的滤镜功能</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="区块链与比特币"><a href="#区块链与比特币" class="headerlink" title="区块链与比特币"></a>区块链与比特币</h1><h2 id="1、比特币"><a href="#1、比特币" class="headerlink" title="1、比特币"></a>1、比特币</h2><p><strong>1.1</strong> 概念<br>一种数字货币。</p>
-<p><strong>1.2</strong> 特点<br>(1) 去中心化：没有中心的服务器，整个系统直接由用户端的电脑构成。<br>(2) 数据防篡改：所有交易记录全部保存，公开给所有人，支持被加密和验证。<br>(3) 固定的发行量：不会出现通货膨胀现象。</p>
-<p><strong>1.3</strong> 交易流程<br>(1) 需要交易的用户把交易传到网络中。<br>(2) 网络上有些机器叫记账结点，它们通过比拼计算力的方式来竞争记账权，该操作就叫“挖矿”。<br>(3) 获得记账权的结点，会把待记账的交易进行计算打包，并向全网广播。收到信的记账包的结点会对齐进行验证，验证成功后加入自己的区块。</p>
-<p><strong>1.4</strong> P2P去中心化网络的前提<br>网络中的任何结点都是不可信任的，它们中的任何一个都可能会作恶。</p>
-<p><strong>1.5</strong> 分布式账本系统的设计思想<br>任何人都可以拿到所有的数据，数据要能很容易地被验证是合法的且没有经过修改的，同时也要很难被修改。基于这样的设计，比特币使用了两个比较大的技术：<strong>区块链</strong>和<strong>工作量证明共识机制</strong>。</p>
-<h2 id="2、区块链"><a href="#2、区块链" class="headerlink" title="2、区块链"></a>2、区块链</h2><p><strong>2.1</strong> 概念<br>区块链包含了一个个的区块，每个区块中包含着一组交易信息。每个区块都会有一个ID（或是一个地址），这些区块通过记录前一个区块的ID来形成一条链。</p>
-<p><strong>2.2</strong> 特点<br>(1) 每个块的ID都是根据内容生成的，一旦内容发生了变化，ID就需要进行改变。<br>(2) 生成每个块的ID的内容包含了上一个块的ID，所以只要上一个块的内容变化了，上一个块的ID就会发生变化，当前块的ID也要变化。<br>(3) 越旧的区块越不容易被篡改，越安全；越新的区块越容易被篡改，越不安全。</p>
-<h2 id="3、工作量证明共识机制"><a href="#3、工作量证明共识机制" class="headerlink" title="3、工作量证明共识机制"></a>3、工作量证明共识机制</h2><p><strong>3.1</strong> 概念<br>用大规模的计算来找到一个符合系统要求的区块ID，要找到符合条件的区块ID只能通过暴力穷举的方式，因此要付出大量的系统计算资源和电力，这个花费大代价寻找合法区块ID的过程就称为“挖矿”。</p>
-<p><strong>3.2</strong> 特点<br>(1) 使区块数据的修改变得几乎不可能：篡改单个区块的成本已经很高了，再修改整个链的成本就更高了。<br>(2) 能掌握51%的算力的人几乎不可能存在：伪造一条链的成本很高，控制大多数人的算力也需要巨额的资金投入。<br>(3) 能够解决关于数据一致性的分歧：找到合法区块ID需要巨大的工作量，能够有效降低大家意见冲突的概率；即使同时出现了多个合法区块，因挖矿的成本过高，不可能同时跟进多个区块，大多数人选择的那个区块的链会越来越多，同时出现的另外合法区块也就无人问津从而作废了。</p>
+      		<p>说到图像处理，就不得不提在iOS开发领域一直十分火热的GPUImage框架，它是一个针对iOS和Mac平台的开源图像处理框架，其内置124种滤镜，支持自定义滤镜，支持摄像头数据、静态图片和视频的图像处理，在Github上Star数量19.3k，Fork数量4.5k。GPUImage发展到现在，其作者已发布了3个大版本，使用的编程语言和渲染引擎也有区别。分别是：<br>1、GPUImage（使用Objective-C编写，基于OpenGLES封装）<br>2、GPUImage 2（使用Swift 3编写，基于OpenGLES封装）<br>3、GPUImage 3（使用Swift 4编写，基于Metal封装）<br>因Android和iOS均支持OpenGLES渲染引擎，但Android不支持Metal渲染引擎，为了保证跨平台特性，我主要对于GPUImage的第一版做了详细的研究和整理（第二版的Swift3语言不稳定，需要额外的学习成本）。  </p>
+<p>GPUImage框架从功能方面来看，其主要组成部分有：<br>1、iOS和Mac相关的应用层组件<br>2、OpenGLES上下文管理组件<br>3、OpenGLES着色器程序管理组件<br>4、OpenGLES帧缓存和纹理管理组件<br>5、滤镜基类和四大类别的具体滤镜<br>应用层组件和上下文管理组件与平台关系较大，因此重点关注的内容为后面3个组成部分。</p>
+<h2 id="OpenGLES-着色器程序管理组件"><a href="#OpenGLES-着色器程序管理组件" class="headerlink" title="OpenGLES 着色器程序管理组件"></a>OpenGLES 着色器程序管理组件</h2><p>着色器管理组件对于顶点着色器和片段着色器的编译、链接和使用进行了封装，开发者可以通过传入着色器代码来自定义着色器程序。</p>
+<h2 id="OpenGLES-帧缓存和纹理管理组件"><a href="#OpenGLES-帧缓存和纹理管理组件" class="headerlink" title="OpenGLES 帧缓存和纹理管理组件"></a>OpenGLES 帧缓存和纹理管理组件</h2><p>OpenGLES中的帧缓存和纹理是贯穿整个图像处理流程的灵魂部分，该组件也对其进行了很好的封装，可通过管理类对象来进行帧缓存和纹理的管理和操作。同时为了最大程度地节省渲染引擎资源，还使用了缓冲池来对于管理类对象进行管理。在具体的滤镜使用完底层资源后，缓冲池会将其对应的管理类对象进行回收，并在后续渲染时提供给有需求的滤镜进行使用。缓冲池和管理类对象的关系如下图所示：<br><img src="/2020/05/19/GPUImage/1.png" alt=""></p>
+<h2 id="滤镜基类"><a href="#滤镜基类" class="headerlink" title="滤镜基类"></a>滤镜基类</h2><p>GPUImage框架很巧妙地使用了Objective-C语言的特性，声明了GPUImageInput协议，规定了接收内容输入的类需要实现哪些方法；同时抽象出了GPUImageOutput这个专门用于内容输出的基类。<br>滤镜基类通过继承了GPUImageOutput基类，同时又遵循了GPUImageInput协议，从而拥有了既能接收外部渲染结果，又能输出渲染结果的功能。<br>滤镜基类分为两种：一种是基础滤镜GPUImageFilter，80%的基础滤镜都是以此为基础进行实现的；另一种是高级滤镜GPUImageFilterGroup，用于定制一些特殊的图像处理功能。</p>
+<h3 id="1、基础滤镜GPUImagFilter"><a href="#1、基础滤镜GPUImagFilter" class="headerlink" title="1、基础滤镜GPUImagFilter"></a>1、基础滤镜GPUImagFilter</h3><p>基础滤镜GPUImageFilter可以说是GPUImage框架的核心部分，默认接收单个外部渲染结果，输出单个渲染结果。基础滤镜与之前提到的输出基类和输入协议之间的关系如下图所示：<br><img src="/2020/05/19/GPUImage/2.png" alt=""></p>
+<p>在GPUImageFilter的基础上也发展出了能接收多个外部渲染结果和内部能根据不同的着色器程序进行多次渲染的滤镜，但不管怎么样，输出结果都只有1个，如下图所示：<br><img src="/2020/05/19/GPUImage/3.png" alt=""></p>
+<h3 id="2、高级滤镜GPUImageFilterGroup"><a href="#2、高级滤镜GPUImageFilterGroup" class="headerlink" title="2、高级滤镜GPUImageFilterGroup"></a>2、高级滤镜GPUImageFilterGroup</h3><p>GPUImageFilterGroup用于封装多个滤镜的相互组合，从而生成一个结构复杂的高级滤镜。作为基类，它对于内部多个滤镜之间的相互关系没有限制，具体实现逻辑由子类进行自定义，高级滤镜与之前提到的输出基类和输入协议之间的关系如下图所示：<br><img src="/2020/05/19/GPUImage/4.png" alt=""></p>
+<h2 id="滤镜实现原理"><a href="#滤镜实现原理" class="headerlink" title="滤镜实现原理"></a>滤镜实现原理</h2><p>在讲解滤镜实现原理之前，需要先了解一个概念：在OpenGLES中，如果在帧缓存上附加一个纹理对象，可以将渲染后的结果写在该纹理中。利用这个特性，每个滤镜都可以将图像处理后的结果写在一个特定的纹理上。具体的滤镜会按照特定的功能，对片段着色器的代码进行定制，以达到图像处理的效果。</p>
+<h3 id="1、单输入滤镜"><a href="#1、单输入滤镜" class="headerlink" title="1、单输入滤镜"></a>1、单输入滤镜</h3><p>之前说到滤镜是同时支持渲染结果的输入和输出的（渲染结果一般指OpenGLES帧缓存和纹理的管理类对象，后面统一称为帧缓存对象），那么单输入滤镜就可以从接收到的帧缓存对象A中获取纹理id，然后从缓冲池中获取一个用于输出的帧缓存对象B，执行完渲染操作后，得到的结果会写在用于输出的帧缓存对象B所封装的纹理中，再将这个帧缓存对象B输出给下一个遵循了GPUImageInput协议的对象，就完成了单次的滤镜处理操作。具体流程如下图所示：<br><img src="/2020/05/19/GPUImage/5.png" alt=""><br><img src="/2020/05/19/GPUImage/6.png" alt=""></p>
+<h3 id="2、多输入滤镜"><a href="#2、多输入滤镜" class="headerlink" title="2、多输入滤镜"></a>2、多输入滤镜</h3><p>多输入滤镜继承自单输入滤镜，以基类形式对外提供。多输入滤镜在接收到帧缓存对象时，需要等到所有用于输入的帧缓存对象都接收完毕，才会进行渲染操作，通常会在片段着色器中同时操作多个纹理（输入个数由子类决定）。该类滤镜常用于实现多个图像的混合效果。具体流程如下图所示：<br><img src="/2020/05/19/GPUImage/7.png" alt=""><br><img src="/2020/05/19/GPUImage/6.png" alt=""></p>
+<h3 id="3、多着色器滤镜"><a href="#3、多着色器滤镜" class="headerlink" title="3、多着色器滤镜"></a>3、多着色器滤镜</h3><p>多着色器滤镜继承自单输入滤镜，以基类形式对外提供。多着色器滤镜内部会初始化多个着色器程序（着色器程序个数由子类决定），进行多次渲染操作，接收单个帧缓存对象的输入，输出单个帧缓存对象。具体流程如下图所示：<br><img src="/2020/05/19/GPUImage/8.png" alt=""></p>
+<h2 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h2><p>之前有说到，GPUImage框架利用Objective-C语言的特性，声明了GPUImageInput协议，规定了接收内容输入的类需要实现哪些方法；同时抽象出了GPUImageOutput这个专门用于内容输出的基类，但是输出的目的地有条件限制，那就是必须是遵循了GPUImageInput协议的实例对象。<br>滤镜基类通过继承了GPUImageOutput基类，同时又遵循了GPUImageInput协议，从而拥有了既能接收外部渲染结果输入，又能输出渲染结果的功能。<br>每个具有特定功能的滤镜都会继承滤镜基类，在这样的设定下，滤镜之间可以传递已经处理好的帧缓存对象，每个滤镜都可以作为接收者，接收上一个滤镜处理好的帧缓存对象，同时可以将自己处理后的帧缓存对象进行输出，作为下一个滤镜的输入内容。<br>GPUImage框架中许多复杂滤镜都是通过这种滤镜之间传递帧缓存对象的操作来实现的，在前一个滤镜渲染完成后会自动触发下一个滤镜的渲染操作，直到滤镜链上的最后一个滤镜完成渲染为止。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2020/09/30/数据结构/" style="float: left;">
-        ← 数据结构（持续更新）
+    <a class="pull-left" href="/2020/05/20/ImageFilter/" style="float: left;">
+        ← 使用C++实现基于OpenGLES的滤镜功能
     </a>
     
     
-    <a class="pull-right" href="/2020/05/20/ImageFilter/">
-        使用C++实现基于OpenGLES的滤镜功能 →
+    <a class="pull-right" href="/2019/11/20/workspace/">
+        使用Xcode的workspace优化SDK的开发和维护 →
     </a>
     
 </nav>
