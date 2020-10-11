@@ -159,8 +159,8 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="使用Xcode的workspace优化SDK的开发和维护"><a href="#使用Xcode的workspace优化SDK的开发和维护" class="headerlink" title="使用Xcode的workspace优化SDK的开发和维护"></a>使用Xcode的workspace优化SDK的开发和维护</h1><h2 id="传统方式的问题"><a href="#传统方式的问题" class="headerlink" title="传统方式的问题"></a>传统方式的问题</h2><p>进行iOS静态库的开发和维护时，经常有这样的操作：每次SDK的代码修改完之后，需要在SDK工程中构建得到静态库，再将静态库拷贝至测试App工程（测试App用于测试SDK的功能）的目录下，再进行测试App的构建。这样做有2个明显的缺点：<br>1、不能针对SDK进行断点调试，如果要得知一些运行时的变量值或者观察程序运行流程时就需要添加很多打印信息，从控制台的运行结果中来查看。<br>2、产生很多不必要的重复劳动。</p>
-<h2 id="明确需求"><a href="#明确需求" class="headerlink" title="明确需求"></a>明确需求</h2><p>做为SDK的开发人员，其实最想要的，就是能有这么一个工具，能在修改完SDK的代码后做到如下2点：<br>(1)执行一次手动操作就能在测试App中对SDK进行验证，不需要额外手动执行静态库的构建和拷贝工作。<br>(2)在运行测试App时能够针对SDK进行断点调试。</p>
+      		<h2 id="传统方式的问题"><a href="#传统方式的问题" class="headerlink" title="传统方式的问题"></a>传统方式的问题</h2><p>进行iOS静态库的开发和维护时，经常有这样的操作：每次SDK的代码修改完之后，需要在SDK工程中构建得到静态库，再将静态库拷贝至测试App工程（测试App用于测试SDK的功能）的目录下，再进行测试App的构建。这样做有2个明显的缺点：<br>1、不能针对SDK进行断点调试，如果要得知一些运行时的变量值或者观察程序运行流程时就需要添加很多打印信息，从控制台的运行结果中来查看。<br>2、产生很多不必要的重复劳动。</p>
+<h2 id="明确需求"><a href="#明确需求" class="headerlink" title="明确需求"></a>明确需求</h2><p>做为SDK的开发人员，其实最想要的，就是能有这么一个工具，能在修改完SDK的代码后做到如下2点：<br>1、执行一次手动操作就能在测试App中对SDK进行验证，不需要额外手动执行静态库的构建和拷贝工作。<br>2、在运行测试App时能够针对SDK进行断点调试。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="1、关联工程"><a href="#1、关联工程" class="headerlink" title="1、关联工程"></a>1、关联工程</h3><p>研究后发现，Xcode的workspace其实就具有这样的功能，它的功能就是将多个project放到同一个工作空间里进行关联。在同一个workspace下，scheme可以将各个project中的target都添加进来。workspace、project、scheme、target的关系可以用下图表示：<br><img src="/.com//相互关系.png" alt=""></p>
 <p>假设当前场景下进行SDK的开发和维护需要2个工程：<br>(1)1个测试App工程。<br>(2)1个SDK工程。<br>我们将测试App工程和SDK工程添加到同一个workspace中。具体操作步骤如下：<br>(1)新建workspace，Xcode顶部菜单File -&gt; New -&gt; Workspace。<br>(2)在workspace左侧资源管理页，右键 -&gt; Add Files To “xx”…，选择要关联的SDK工程文件和测试App工程文件。<br>(3)新建scheme，添加构建测试App的target，并将scheme的归属（Container）设置为workspace。</p>
 <p>到此为止，SDK和测试App的关联就完成了，之后进行开发和维护使用第3步新建的scheme即可。进行测试App的构建时，Xcode会自动检测App中使用到的静态库，如果SDK工程的成果物就是测试工具所需的静态库，那么会同时进行SDK的构建，并将SDK构建后的成果物链接到测试工具中，形成成果物之间的隐式依赖关系。</p>
