@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>使用Xcode的workspace优化SDK的开发和维护 | Viva&#39;s Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Viva's Blog">
+    <meta name="author" content="Viva">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Viva&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(6)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo_new.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Viva's Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-11-19T16:00:00.000Z" itemprop="datePublished">
+          2019-11-20
+      </time>
+    
+</span>
+                <h1>使用Xcode的workspace优化SDK的开发和维护</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="使用Xcode的workspace优化SDK的开发和维护"><a href="#使用Xcode的workspace优化SDK的开发和维护" class="headerlink" title="使用Xcode的workspace优化SDK的开发和维护"></a>使用Xcode的workspace优化SDK的开发和维护</h1><h2 id="传统方式的问题"><a href="#传统方式的问题" class="headerlink" title="传统方式的问题"></a>传统方式的问题</h2><p>进行iOS静态库的开发和维护时，经常有这样的操作：每次SDK的代码修改完之后，需要在SDK工程中构建得到静态库，再将静态库拷贝至测试App工程（测试App用于测试SDK的功能）的目录下，再进行测试App的构建。这样做有2个明显的缺点：<br>1、不能针对SDK进行断点调试，如果要得知一些运行时的变量值或者观察程序运行流程时就需要添加很多打印信息，从控制台的运行结果中来查看。<br>2、产生很多不必要的重复劳动。</p>
+<h2 id="明确需求"><a href="#明确需求" class="headerlink" title="明确需求"></a>明确需求</h2><p>做为SDK的开发人员，其实最想要的，就是能有这么一个工具，能在修改完SDK的代码后做到如下2点：<br>(1)执行一次手动操作就能在测试App中对SDK进行验证，不需要额外手动执行静态库的构建和拷贝工作。<br>(2)在运行测试App时能够针对SDK进行断点调试。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="1、关联工程"><a href="#1、关联工程" class="headerlink" title="1、关联工程"></a>1、关联工程</h3><p>研究后发现，Xcode的workspace其实就具有这样的功能，它的功能就是将多个project放到同一个工作空间里进行关联。在同一个workspace下，scheme可以将各个project中的target都添加进来。workspace、project、scheme、target的关系可以用下图表示：<br><img src="/.com//相互关系.png" alt=""></p>
+<p>假设当前场景下进行SDK的开发和维护需要2个工程：<br>(1)1个测试App工程。<br>(2)1个SDK工程。<br>我们将测试App工程和SDK工程添加到同一个workspace中。具体操作步骤如下：<br>(1)新建workspace，Xcode顶部菜单File -&gt; New -&gt; Workspace。<br>(2)在workspace左侧资源管理页，右键 -&gt; Add Files To “xx”…，选择要关联的SDK工程文件和测试App工程文件。<br>(3)新建scheme，添加构建测试App的target，并将scheme的归属（Container）设置为workspace。</p>
+<p>到此为止，SDK和测试App的关联就完成了，之后进行开发和维护使用第3步新建的scheme即可。进行测试App的构建时，Xcode会自动检测App中使用到的静态库，如果SDK工程的成果物就是测试工具所需的静态库，那么会同时进行SDK的构建，并将SDK构建后的成果物链接到测试工具中，形成成果物之间的隐式依赖关系。</p>
+<h3 id="2、配置SDK的编译链接选项"><a href="#2、配置SDK的编译链接选项" class="headerlink" title="2、配置SDK的编译链接选项"></a>2、配置SDK的编译链接选项</h3><p>经过测试发现，测试App和SDK的debug、release选项会跟随当前所执行的scheme中选定的配置，所以要实现断点调试，就需要在scheme中配置debug模式，同时SDK的工程配置也要做相应配合。为了实现debug模式下能对SDK进行断点调试，并保证release模式下的代码保密性，在SDK的编译链接选项配置就很有讲究，正常情况下按照下面表格中的内容进行配置。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项名称</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">Debug</th>
+<th style="text-align:left">Release</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Generate Debug Symbols</td>
+<td style="text-align:left">是否生成Debug符号</td>
+<td style="text-align:left">开启</td>
+<td style="text-align:left">关闭</td>
+</tr>
+<tr>
+<td style="text-align:left">Debug Information Level</td>
+<td style="text-align:left">调试信息等级</td>
+<td style="text-align:left">设置为Compiler default</td>
+<td style="text-align:left">Line tables only（设置无效）</td>
+</tr>
+<tr>
+<td style="text-align:left">Deployment Postprocessing</td>
+<td style="text-align:left">是否开启后处理，下面3个选项的总开关</td>
+<td style="text-align:left">关闭</td>
+<td style="text-align:left">开启</td>
+</tr>
+<tr>
+<td style="text-align:left">Strip Linked Product</td>
+<td style="text-align:left">是否剥离依赖库的符号</td>
+<td style="text-align:left">关闭</td>
+<td style="text-align:left">开启</td>
+</tr>
+<tr>
+<td style="text-align:left">Strip Style</td>
+<td style="text-align:left">剥离符号的等级</td>
+<td style="text-align:left">默认为Debugging Symbols（设置无效）</td>
+<td style="text-align:left">设置为Non-Global Symbols</td>
+</tr>
+<tr>
+<td style="text-align:left">Strip Debug Symbols During Copy</td>
+<td style="text-align:left">是否剥离Debug符号</td>
+<td style="text-align:left">关闭</td>
+<td style="text-align:left">开启</td>
+</tr>
+</tbody>
+</table>
+<p>根据上表的选项进行配置，既可以保证在Debug模式下能够对SDK进行断点调试，又可以保证以Release模式构建得到的成果物的内部细节不会暴露给外界调用方，还大大减少了Release包的体积，去掉了其中许多无用的内容。</p>
+<h3 id="3、使用shell脚本完成静态库的构建和替换"><a href="#3、使用shell脚本完成静态库的构建和替换" class="headerlink" title="3、使用shell脚本完成静态库的构建和替换"></a>3、使用shell脚本完成静态库的构建和替换</h3><p>经过测试发现，workspace中使用SDK工程自动构建出来的静态库对于开发者来说是不可见的，并且不会将测试App目录下的SDK进行文件意义上的替换。所以要完成拷贝操作，我们需要首先自行构建出静态库，然后执行拷贝操作，这个操作可以使用shell脚本来完成。具体流程如下图所示：<br><img src="/.com//批量编译打包流程.png" alt=""></p>
+<p>脚本如何执行，可以有2种做法，推荐使用第2种做法：<br>(1)一种做法就是在SDK的project中添加一个aggregate类型的target，该类型的target可以让我们在其中添加shell语言编写的脚本，将构建和拷贝的操作作为一个target，添加到scheme中，可以与其他target并行执行。<br>(2)另一种做法是将脚本放在workspace独有的scheme中，作为scheme的pre-actions或post-actions，与App工程和SDK工程区分开来。从项目管理的角度分析，这样的做法更加合乎逻辑，因为App工程和SDK工程原本就是能够独立构建成果物的，是workspace将这两者关联在了一起，因此一些额外的操作放在workspace的scheme中更加合适。</p>
+<p>最后贴一下脚本代码吧  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">#------------------------------iOS静态库批量构建脚本------------------------------</span><br><span class="line"></span><br><span class="line">#------------------------------自定义变量配置------------------------------</span><br><span class="line"></span><br><span class="line"># 项目根路径</span><br><span class="line">SOURCE_PROJECT_PATH=&quot;/Users/xxx/xxx/xxx&quot;</span><br><span class="line"></span><br><span class="line"># 需要打包的工程路径，全部是绝对路径，路径必须到.xcodeproj</span><br><span class="line"># 如果该工程有多个Target，需要指定一个特定的Target来编译，在路径后面加(两个下划线)__Target名称</span><br><span class="line"># 例如：xxx/projectName.xcodeproj__TargetName</span><br><span class="line">PROJECT_PATH_ARRAY=(</span><br><span class="line">&quot;$&#123;SOURCE_PROJECT_PATH&#125;/xxx.xcodeproj&quot; \</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># 需要将SDK输出的路径</span><br><span class="line">SDK_OUTPUT_PATH_ARRAY=(</span><br><span class="line">&quot;$&#123;SOURCE_PROJECT_PATH&#125;/测试App存放静态库的路径&quot; \</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># 当前静态库的名称（xxx.a）</span><br><span class="line">CURRENT_FULL_PRODUCT_NAME=&quot;&quot;</span><br><span class="line"># 当前target的名称</span><br><span class="line">CURRENT_TARGET_NAME=&quot;&quot;</span><br><span class="line"></span><br><span class="line">#------------------------------路径配置------------------------------</span><br><span class="line"></span><br><span class="line"># 编译后成果物的根路径，此路径默认是桌面路径，可以自己指定对应的路径</span><br><span class="line">ROOT_PATH=&quot;$&#123;HOME&#125;/Desktop&quot;</span><br><span class="line"></span><br><span class="line"># 获取开始时间</span><br><span class="line">start_seconds=$(date +%s);</span><br><span class="line">CURRENT_DATE=`date +%Y-%m-%d_%H-%M-%S`</span><br><span class="line"># 编译后所有成果物的存放路径</span><br><span class="line">ROOT_BUILD_PATH=&quot;$&#123;ROOT_PATH&#125;/MobilePlayControl-$&#123;CURRENT_DATE&#125;&quot;</span><br><span class="line"># 编译过程产生的日志文件的存放路径</span><br><span class="line">LOG_DIR=&quot;$&#123;ROOT_BUILD_PATH&#125;/Build_Log&quot;</span><br><span class="line"></span><br><span class="line"># 当前库编译成果的路径</span><br><span class="line">CURRENT_BUILD_PATH=&quot;&quot;</span><br><span class="line"></span><br><span class="line"># BuildSetting导出的临时目录</span><br><span class="line">TMP_BUILDSETTING_DIR=&quot;$&#123;ROOT_BUILD_PATH&#125;/TMP_BuildSetting&quot;</span><br><span class="line"># 编译和打包产生结果的临时输出目录（若编译时没配置OBJROOT，会包含OBJROOT的内容）</span><br><span class="line">TMP_SYMROOT=&quot;$&#123;ROOT_BUILD_PATH&#125;/TMP_result&quot;</span><br><span class="line"># 产生.a和.hmap文件的临时目录</span><br><span class="line">TMP_OBJROOT=&quot;$&#123;ROOT_BUILD_PATH&#125;/TMP_object&quot;</span><br><span class="line"></span><br><span class="line">#------------------------------编译选项配置------------------------------</span><br><span class="line"></span><br><span class="line"># 将PROJECT_PATH_ARRAY配置的地址【全部】Build出来的SDK所支持架构，设置0或者1</span><br><span class="line"># 0:支持真机和模拟器；1:只支持真机</span><br><span class="line">BUILD_SUPPORT_PLATFORM=1</span><br><span class="line"></span><br><span class="line"># build类型  有Release和Debug两种选项</span><br><span class="line">BUILD_TYPE=&quot;Release&quot;</span><br><span class="line"></span><br><span class="line">#------------------------------函数定义------------------------------</span><br><span class="line"></span><br><span class="line"># 创建文件路径</span><br><span class="line"># 清除某个目录里面的内容，如果有则清除内容，没有的直接创建该目录</span><br><span class="line"># 参数1:目录</span><br><span class="line">clearDirAll()&#123;</span><br><span class="line">        if [ ! -d $1 ];</span><br><span class="line">    then</span><br><span class="line">        mkdir -p $1</span><br><span class="line">    else</span><br><span class="line">        # 先删除，再创建</span><br><span class="line">        rm -rf $1</span><br><span class="line">        mkdir -p $1</span><br><span class="line">    fi</span><br><span class="line">    return 0</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"># 创建Build根目录</span><br><span class="line">clearDirAll $&#123;ROOT_BUILD_PATH&#125;</span><br><span class="line">clearDirAll $&#123;TMP_BUILDSETTING_DIR&#125;</span><br><span class="line">clearDirAll $&#123;LOG_DIR&#125;</span><br><span class="line"></span><br><span class="line"># 合并真机和模拟器</span><br><span class="line"># 参数1:当前创建的Build目录</span><br><span class="line">mergeSDK()&#123;</span><br><span class="line">    # 1.找到真机和模拟器路径</span><br><span class="line">    tmpIphonesPath=&quot;$&#123;CURRENT_BUILD_PATH&#125;/$&#123;BUILD_TYPE&#125;-iphoneos&quot;</span><br><span class="line">    tmpIphonesimulatorPath=&quot;$&#123;CURRENT_BUILD_PATH&#125;/$&#123;BUILD_TYPE&#125;-iphonesimulator&quot;</span><br><span class="line">    tmpSDKName=&quot;&quot;</span><br><span class="line"></span><br><span class="line">    # 2.获取当前SDK名称</span><br><span class="line">    for file in $&#123;tmpIphonesPath&#125;/*</span><br><span class="line">    do</span><br><span class="line">        # 拿到SDK文件名称</span><br><span class="line">        tmpName=`basename $&#123;file&#125;`</span><br><span class="line">        if [[ $tmpName =~ $CURRENT_FULL_PRODUCT_NAME ]];then</span><br><span class="line">            tmpSDKName=$&#123;tmpName&#125;</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line"></span><br><span class="line">    # 3.根据BUILD_SUPPORT_PLATFORM配置项判断Build模拟器还是真机</span><br><span class="line">    if [ $BUILD_SUPPORT_PLATFORM -eq 0 ]; then # 支持真机和模拟器</span><br><span class="line">        # 判断当前的SDK时.a类型的还是.framework类型的,并且各自合并</span><br><span class="line">        tmpAStr=&quot;.a&quot; # 当前是.a形式的SDK</span><br><span class="line">        tmpFStr=&quot;.framework&quot; # 当前是.framework形式的SDK</span><br><span class="line">        if [[ $tmpSDKName =~ $tmpFStr ]]; then</span><br><span class="line">            # 获取.framework文件的名称</span><br><span class="line">            tmpFrameWorkName=$&#123;tmpSDKName%.*&#125;</span><br><span class="line">            # 将真机模式下的framework拷贝一份到根目录下</span><br><span class="line">            cp -r $&#123;tmpIphonesPath&#125;/$&#123;tmpSDKName&#125; $1/$&#123;tmpSDKName&#125;</span><br><span class="line">            # 合并.framework中的二进制文件，输出至之前拷贝到根目录下的.framework当中</span><br><span class="line">            lipo -create &quot;$&#123;tmpIphonesPath&#125;/$&#123;tmpSDKName&#125;/$&#123;tmpFrameWorkName&#125;&quot; &quot;$&#123;tmpIphonesimulatorPath&#125;/$&#123;tmpSDKName&#125;/$&#123;tmpFrameWorkName&#125;&quot; -output &quot;$1/$&#123;tmpSDKName&#125;/$&#123;tmpFrameWorkName&#125;&quot;</span><br><span class="line">        elif [[ $tmpSDKName =~ $tmpAStr ]]; then</span><br><span class="line">            # 合并.a</span><br><span class="line">            lipo -create &quot;$&#123;tmpIphonesPath&#125;/$&#123;tmpSDKName&#125;&quot; &quot;$&#123;tmpIphonesimulatorPath&#125;/$&#123;tmpSDKName&#125;&quot; -output &quot;$1/$&#123;tmpSDKName&#125;&quot;</span><br><span class="line">        fi</span><br><span class="line">    elif [ $BUILD_SUPPORT_PLATFORM -eq 1 ]; then # 只支持真机</span><br><span class="line">        # 如果只支持真机，就直接将真机目录下的SDK拷贝到根目录下就可以</span><br><span class="line">    cp -r $&#123;tmpIphonesPath&#125;/$&#123;tmpSDKName&#125; $&#123;CURRENT_BUILD_PATH&#125;/$&#123;tmpSDKName&#125;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    # 4.将include中的文件（.h和资源文件）拷贝到.a文件的同级目录下</span><br><span class="line">    includePath=&quot;$&#123;tmpIphonesPath&#125;/include/$&#123;CURRENT_TARGET_NAME&#125;&quot;</span><br><span class="line">    cp -rf $&#123;includePath&#125;/* $&#123;CURRENT_BUILD_PATH&#125;</span><br><span class="line">#    find $1 -maxdepth 1 -type d -name &quot;*.h&quot; -exec rm -rf &#123;&#125; \;</span><br><span class="line">#    find $&#123;tmpIphonesPath&#125; -maxdepth 1 -type f -name &quot;*.h&quot; -exec mv -f &#123;&#125; $1 \;</span><br><span class="line"></span><br><span class="line">    # 5.移除iphones目录和iphonesimulator目录</span><br><span class="line">    rm -rf &quot;$&#123;tmpIphonesPath&#125;&quot;</span><br><span class="line">    rm -rf &quot;$&#123;tmpIphonesimulatorPath&#125;&quot;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"># .a库打包方法，接收两个参数</span><br><span class="line"># 参数1:工程路径,精确到xxx.xcodeproj</span><br><span class="line"># 参数2:TARGET名称</span><br><span class="line">buildLibrary()&#123;</span><br><span class="line">    if [ -n $1 ]; then</span><br><span class="line">        if [ -n $2 ]; then</span><br><span class="line">            # 创建每个.a的Build路径</span><br><span class="line">            CURRENT_BUILD_PATH=&quot;$&#123;ROOT_BUILD_PATH&#125;/$2&quot;</span><br><span class="line">            currentResultPath=&quot;$&#123;TMP_SYMROOT&#125;/$2&quot;</span><br><span class="line">            currentObjectPath=&quot;$&#123;TMP_OBJROOT&#125;/$2&quot;</span><br><span class="line"></span><br><span class="line">            echo &quot;-----------------正在编译 $2-----------------&quot;</span><br><span class="line"></span><br><span class="line">            # 创建目录</span><br><span class="line">            clearDirAll $&#123;CURRENT_BUILD_PATH&#125;</span><br><span class="line">            # 设置日志文件路径</span><br><span class="line">            logFilePath=&quot;$&#123;LOG_DIR&#125;/$2-Build.log&quot;</span><br><span class="line"></span><br><span class="line">            # 根据BUILD_SUPPORT_PLATFORM配置项判断Build模拟器还是真机</span><br><span class="line">            if [ $BUILD_SUPPORT_PLATFORM -eq 0 ]; then # 支持真机和模拟器</span><br><span class="line"></span><br><span class="line">            echo &quot;-----------------开始Build模拟器-----------------&quot; &gt;&gt;$&#123;logFilePath&#125;</span><br><span class="line"></span><br><span class="line">            # 开始Build模拟器</span><br><span class="line">            xcodebuild  -configuration &quot;$&#123;BUILD_TYPE&#125;&quot; ONLY_ACTIVE_ARCH=NO -project &quot;$1&quot; -target &quot;$2&quot; SYMROOT=&quot;$&#123;currentResultPath&#125;&quot; OBJROOT=&quot;$&#123;currentObjectPath&#125;&quot; BUILD_DIR=&quot;$&#123;CURRENT_BUILD_PATH&#125;&quot; -sdk iphonesimulator clean build &gt;&gt;$&#123;logFilePath&#125;</span><br><span class="line"></span><br><span class="line">            echo &quot;-----------------开始Build真机-----------------&quot; &gt;&gt;$&#123;logFilePath&#125;</span><br><span class="line"></span><br><span class="line">            # 开始Build真机</span><br><span class="line">            xcodebuild -configuration &quot;$&#123;BUILD_TYPE&#125;&quot; ONLY_ACTIVE_ARCH=NO -project &quot;$1&quot; -target &quot;$2&quot; SYMROOT=&quot;$&#123;currentResultPath&#125;&quot; OBJROOT=&quot;$&#123;currentObjectPath&#125;&quot; BUILD_DIR=&quot;$&#123;CURRENT_BUILD_PATH&#125;&quot; -sdk iphoneos clean build &gt;&gt;$&#123;logFilePath&#125;</span><br><span class="line">            elif [ $BUILD_SUPPORT_PLATFORM -eq 1 ]; then # 只支持真机</span><br><span class="line"></span><br><span class="line">            echo &quot;-----------------开始Build真机-----------------&quot; &gt;&gt;$&#123;logFilePath&#125;</span><br><span class="line"></span><br><span class="line">            # 开始Build真机</span><br><span class="line">            xcodebuild -configuration &quot;$&#123;BUILD_TYPE&#125;&quot; ONLY_ACTIVE_ARCH=NO -project &quot;$1&quot; -target &quot;$2&quot; SYMROOT=&quot;$&#123;currentResultPath&#125;&quot; OBJROOT=&quot;$&#123;currentObjectPath&#125;&quot; BUILD_DIR=&quot;$&#123;CURRENT_BUILD_PATH&#125;&quot; -sdk iphoneos clean build &gt;&gt;$&#123;logFilePath&#125;</span><br><span class="line">            fi</span><br><span class="line"></span><br><span class="line">            echo &quot;-----------------$2 编译完成-----------------&quot;</span><br><span class="line"></span><br><span class="line">            # 3.合并真机和模拟器的SDK</span><br><span class="line">            mergeSDK;</span><br><span class="line"></span><br><span class="line">#            # 4.移除工程根目录下的build目录（build目录额外指定后，工程根目录下不会生成build目录）</span><br><span class="line">#            tmpPath=$1</span><br><span class="line">#            projectPath=$&#123;tmpPath%/*&#125; # %/*表示从头开始取到最后一个slash(/)之前的所有内容</span><br><span class="line">#            rm -rf &quot;$&#123;projectPath&#125;/build&quot;</span><br><span class="line">        else</span><br><span class="line">            echo &quot;Target不能为空&quot;</span><br><span class="line">        fi</span><br><span class="line">    else</span><br><span class="line">        echo &quot;工程路径不能为空&quot;</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"># 导出BuildSetting文件并且找出TARGET_NAME和PRODUCT_NAME环境变量的值</span><br><span class="line"># param1:工程路径</span><br><span class="line"># param2:TARGET名称，如果没有可以传nil</span><br><span class="line">readBuildSetting()&#123;</span><br><span class="line">    # 1.清除全局变量的值</span><br><span class="line">    CURRENT_TARGET_NAME=&quot;&quot;</span><br><span class="line">    CURRENT_FULL_PRODUCT_NAME=&quot;&quot;</span><br><span class="line"></span><br><span class="line">    # 2.将工程工程对应Target的BuildSetting文件导出到本地</span><br><span class="line">    BuildSettingFilePath=&quot;$&#123;TMP_BUILDSETTING_DIR&#125;/tmp_buildSetting.txt&quot;</span><br><span class="line">    if [ -n &quot;$1&quot; ]; then</span><br><span class="line">        cmdStr=&quot;xcodebuild -list -project $1 -showBuildSettings &gt;$&#123;BuildSettingFilePath&#125;&quot;</span><br><span class="line">        if [ -n &quot;$2&quot; ]; then</span><br><span class="line">            cmdStr=&quot;xcodebuild -list -project $1 -target $2 -showBuildSettings &gt;$&#123;BuildSettingFilePath&#125;&quot;</span><br><span class="line">        fi</span><br><span class="line">        </span><br><span class="line">        # 将命令中的括号进行字符替换，防止命令执行失败</span><br><span class="line">        cmdStr1=$&#123;cmdStr//&quot;(&quot;/&quot;\(&quot;&#125;</span><br><span class="line">        finalCommand=$&#123;cmdStr1//&quot;)&quot;/&quot;\)&quot;&#125;</span><br><span class="line">        echo &quot;命令:$&#123;finalCommand&#125;&quot;</span><br><span class="line"></span><br><span class="line">        # 执行导出BuildSetting文件的命令</span><br><span class="line">        eval $&#123;finalCommand&#125;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    # 3.解析导出的BuildSetting文件，找出其中的TARGET_NAME和FULL_PRODUCT_NAME</span><br><span class="line">    IFS=&apos;=&apos;</span><br><span class="line">    while read k v</span><br><span class="line">    do</span><br><span class="line">    if [[ &quot;$k&quot; == *FULL_PRODUCT_NAME* ]];then</span><br><span class="line">       CURRENT_FULL_PRODUCT_NAME=$(echo $v | sed &apos;s/[[:space:]]//g&apos;)</span><br><span class="line">    elif [[ &quot;$k&quot; == *TARGET_NAME* ]];then</span><br><span class="line">       CURRENT_TARGET_NAME=$(echo $v | sed &apos;s/[[:space:]]//g&apos;)</span><br><span class="line">    fi</span><br><span class="line">    done &lt; $&#123;BuildSettingFilePath&#125;</span><br><span class="line"></span><br><span class="line">    echo &quot;CURRENT_FULL_PRODUCT_NAME=$&#123;CURRENT_FULL_PRODUCT_NAME&#125;  CURRENT_TARGET_NAME=$&#123;CURRENT_TARGET_NAME&#125;&quot;</span><br><span class="line"></span><br><span class="line">#    rm -rf &quot;$&#123;BuildSettingFilePath&#125;&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">startBuild()&#123;</span><br><span class="line">    # 1.遍历数组，根据路径截取到相应的工程路径以及工程名</span><br><span class="line">    for proPath in $&#123;PROJECT_PATH_ARRAY[*]&#125;</span><br><span class="line">    do</span><br><span class="line">        # 1.获取工程路径</span><br><span class="line">        projectPath=$&#123;proPath&#125;</span><br><span class="line">        targetName=&quot;&quot;</span><br><span class="line"></span><br><span class="line">        # 2.判断工程路径中是否包含__,如果包含了则说明指定了Target</span><br><span class="line">        tmpStr=&quot;__&quot;</span><br><span class="line">        if [[ $proPath =~ $tmpStr ]]</span><br><span class="line">        then</span><br><span class="line">            projectPath=$&#123;proPath%__*&#125;</span><br><span class="line">            # 取到需要的Target名称</span><br><span class="line">            targetName=$&#123;proPath#*__&#125;</span><br><span class="line">        fi</span><br><span class="line"></span><br><span class="line">#        # 3.判断targetName是否为空，如果为空则代表TargetName和工程名称相同</span><br><span class="line">#        if [ -z &quot;$&#123;targetName&#125;&quot; ]; then</span><br><span class="line">#            xcodeproj=$&#123;projectPath##*/&#125;</span><br><span class="line">#            projectName=$&#123;xcodeproj%.*&#125;</span><br><span class="line">#            targetName=$&#123;projectName&#125;</span><br><span class="line">#        fi</span><br><span class="line"></span><br><span class="line">        # 4.读取TARGET_NAME和PRODUCT_NAME</span><br><span class="line">        readBuildSetting $&#123;projectPath&#125; $&#123;targetName&#125;</span><br><span class="line"></span><br><span class="line">        # 5.调用buildLibrary函数进行Build</span><br><span class="line">        buildLibrary $&#123;projectPath&#125; $&#123;CURRENT_TARGET_NAME&#125;</span><br><span class="line"></span><br><span class="line">        # 6.将编译好的库输出至指定目录</span><br><span class="line">        outputPath=&quot;$&#123;SDK_OUTPUT_PATH_ARRAY[i]&#125;&quot;</span><br><span class="line">        sourcePath=&quot;$&#123;ROOT_BUILD_PATH&#125;/$&#123;CURRENT_TARGET_NAME&#125;&quot;</span><br><span class="line">        \cp $&#123;sourcePath&#125;/* $&#123;outputPath&#125;</span><br><span class="line">    done</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#------------------------------编译流程------------------------------</span><br><span class="line"></span><br><span class="line">echo &quot;-----------------开始构建-----------------&quot;</span><br><span class="line"></span><br><span class="line"># 开始构建</span><br><span class="line">startBuild;</span><br><span class="line"></span><br><span class="line"># 移除BuildSetting工作目录</span><br><span class="line">rm -rf &quot;$&#123;TMP_BUILDSETTING_DIR&#125;&quot;</span><br><span class="line"># 移除临时文件</span><br><span class="line">rm -rf &quot;$&#123;TMP_SYMROOT&#125;&quot;</span><br><span class="line">rm -rf &quot;$&#123;TMP_OBJROOT&#125;&quot;</span><br><span class="line"># 移除编译成果物输出的路径</span><br><span class="line">rm -rf &quot;$&#123;ROOT_BUILD_PATH&#125;&quot;</span><br><span class="line"></span><br><span class="line">end_seconds=$(date +%s);</span><br><span class="line"></span><br><span class="line">echo &quot;-----------------构建完成，耗时:$((end_seconds-start_seconds))s-----------------&quot;</span><br><span class="line"></span><br><span class="line"># 打开编译后成果物的目录</span><br><span class="line">#open $&#123;ROOT_BUILD_PATH&#125;</span><br></pre></td></tr></table></figure>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2020/08/02/区块链与比特币/" style="float: left;">
+        ← 区块链与比特币
+    </a>
+    
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Viva. All Rights Reserved.
+                </p>
+                <a href="http://www.beian.miit.gov.cn" style="color: #767D84">浙ICP备20020134号</a>
+                <!-- <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p> -->
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
