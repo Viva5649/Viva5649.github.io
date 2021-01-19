@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>数据结构 | Viva&#39;s Blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Viva's Blog">
+    <meta name="author" content="Viva">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Viva&#39;s Blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Tech/" class="animsition-link">Tech<small>(9)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo_new.jpg" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Viva's Blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-01-01T16:00:00.000Z" itemprop="datePublished">
+          2021-01-02
+      </time>
+    
+</span>
+                <h1>数据结构</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><h3 id="1、数组"><a href="#1、数组" class="headerlink" title="1、数组"></a>1、数组</h3><p><strong>1.1</strong> 概念<br>一种线性表数据结构，使用一组<strong>连续</strong>的内存空间，来存储一组具有相同类型的数据。</p>
+<p><strong>1.2</strong> 特点<br>(1) 随机访问<br>根据数组首地址，被访问元素的下标和数据类型的长度，可以<strong>高效</strong>地访问到特定的元素，时间复杂度为O(1)。<br>(2) 插入<br>元素有序：在数组中间插入和删除时可能涉及多个元素的数据搬运。<br>元素无序：插入时将指定位置的已有元素移到数组尾部，再将新元素插入指定位置以提升效率。<br>(3) 删除<br>删除元素时为了保证数组中数据的连续性，不可避免地要进行数据搬运（删除最后一个元素这种情况除外）。可以每次先记录下要删除的数据，在数据没有更多空间时，再进行真正的删除操作，减少大量数据搬运的次数。</p>
+<p><strong>1.3</strong> 思考：数组下标为何从0开始？<br>当下标从0开始时，寻址公式伪代码为<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br></pre></td><td class="code"><pre><span class="line">当下标从1开始时，寻址公式伪代码为```a[i]_address = base_address + (i-1) * data_type_size;```  </span><br><span class="line">对比后可以看出，当下标不为0时，每次随机访问，都需要额外做一次减法操作，为了将效率优化到极致，数组采取了下标从0开始的做法。</span><br><span class="line"></span><br><span class="line">### 2、链表</span><br><span class="line"></span><br><span class="line">**2.1** 概念  </span><br><span class="line">一种线性表数据结构，通过“指针”将一组零散的内存块（节点）串联起来使用。</span><br><span class="line"></span><br><span class="line">**2.2** 特点  </span><br><span class="line">(1) 随机访问  </span><br><span class="line">非连续存储，需要依次遍历，时间复杂度为O(n)。  </span><br><span class="line">(2) 插入和删除  </span><br><span class="line">只需改变相邻节点的指针，时间复杂度为O(1)。</span><br><span class="line"></span><br><span class="line">**2.3** 分类  </span><br><span class="line">(1) 单链表  </span><br><span class="line">每个节点存储数据，同时记录下一个节点的地址。  </span><br><span class="line">头节点记录链表的基地址，尾节点指向NULL。  </span><br><span class="line">(2) 循环链表  </span><br><span class="line">在单链表的基础上，尾节点指针指向头节点。  </span><br><span class="line">(3) 双向链表  </span><br><span class="line">在单链表的基础上，每个节点额外增加一个指针，指向上一个节点。  </span><br><span class="line">优点在于在特定节点前插入和删除一个特定节点时，无需**从头遍历**来获取特定节点的上一个节点。  </span><br><span class="line">体现了一种“用空间换时间”的设计思想。  </span><br><span class="line">(4) 双向循环链表  </span><br><span class="line">循环链表和双向链表的结合。</span><br><span class="line"></span><br><span class="line">**2.4** 链表代码编写技巧  </span><br><span class="line">(1) 理解指针和引用的含义  </span><br><span class="line">将某个变量赋值给指针，实际就是将这个变量的地址赋值给指针，指针中保存了这个变量的内存地址，通过指针就能访问到该变量。  </span><br><span class="line">(2) 警惕指针丢失和内存泄漏  </span><br><span class="line">插入节点时注意操作顺序。  </span><br><span class="line">删除节点时注意内存的释放。  </span><br><span class="line">(3) 利用“哨兵”简化实现难度  </span><br><span class="line">使用“哨兵”节点来统一链表插入和删除的实现代码。  </span><br><span class="line">使用“哨兵”减少对于边界情况的判断。  </span><br><span class="line">(4) 重点留意边界条件处理  </span><br><span class="line">(5) 举例画图，辅助思考  </span><br><span class="line">(6) 多写多练，练习常用链表操作</span><br><span class="line"></span><br><span class="line">**2.5** 思考：如何用链表来实现LRU缓存淘汰策略（最近最少使用策略）？  </span><br><span class="line">(1) 维护一个有序单链表，越靠近链表尾部的节点是越早访问的。  </span><br><span class="line">(2) 当有一个新的数据被访问时，从链表头部开始顺序遍历链表。  </span><br><span class="line">(3) 如果数据之前已存在，则将其从原先的位置删除，然后插入链表的头部。  </span><br><span class="line">(4) 如果数据没有存在链表中，看链表是否已满：若未满，将数据插入链表头部；若已满，则将链表尾节点删除，将数据插入链表头部。</span><br><span class="line"></span><br><span class="line">**2.6** LeetCode题号  </span><br><span class="line">单链表反转（206）  </span><br><span class="line">链表中环的检测（141）  </span><br><span class="line">两个有序链表的合并（21）  </span><br><span class="line">删除链表倒数第n个节点（19）  </span><br><span class="line">获取链表的中间节点（876）</span><br><span class="line"></span><br><span class="line">### 3、栈</span><br><span class="line"></span><br><span class="line">**3.1** 概念  </span><br><span class="line">一种操作受限的线性表数据结构，有后进先出和先进后出的特性。</span><br><span class="line"></span><br><span class="line">**3.2** 特点  </span><br><span class="line">(1) 数据集合只涉及一端的插入和删除操作。  </span><br><span class="line">(2) 后进先出，先进后出。  </span><br><span class="line">(3) 常用于实现涉及“最近相关性”的逻辑。</span><br><span class="line"></span><br><span class="line">**3.3** 应用场景  </span><br><span class="line">(1) 函数调用栈  </span><br><span class="line">每个线程的独立内存空间，会被组织成“栈”结构，用来存储函数调用时的临时变量  </span><br><span class="line">(2) 表达式求值  </span><br><span class="line">使用两个栈，一个存储操作数，一个存储运算符。当运算符比栈顶元素优先级高时，运算符入栈；比栈顶元素优先级低或相同时，从运算符栈中取出栈顶运算符，从操作数栈中取出栈顶的两个操作数，进行计算，然后把结果压入操作数栈。  </span><br><span class="line">(3) 括号匹配  </span><br><span class="line">扫描字符串，遇到左括号入栈，遇到右括号时与栈顶元素匹配，成功配对后将栈顶元素出栈。若扫描完成后栈为空，则字符串格式合法，否则格式非法。</span><br><span class="line"></span><br><span class="line">**3.4** 思考：如何实现浏览器的前进后退功能？  </span><br><span class="line">使用两个栈。栈A保存每次跳转的页面，跳转到新页面时，压入栈A。后退时，将页面从栈A出栈，压入栈B中。前进时，将页面从栈B出栈，压入栈A中。中途跳转时，要清空栈B中的页面。</span><br><span class="line"></span><br><span class="line">**3.5** LeetCode题号  </span><br><span class="line">20、155、232、844、224、682、496</span><br><span class="line"></span><br><span class="line">### 4、队列</span><br><span class="line"></span><br><span class="line">**4.1** 概念  </span><br><span class="line">一种操作受限的线性表数据结构，有先进先出和后进后出的特性。</span><br><span class="line"></span><br><span class="line">**4.2** 特点  </span><br><span class="line">(1) 入队时将元素插入队列尾部，出队时从队列头部读取元素。  </span><br><span class="line">(2) 先进先出，后进后出。</span><br><span class="line"></span><br><span class="line">**4.3** 分类  </span><br><span class="line">(1) 循环队列  </span><br><span class="line">能够避免入队操作时可能触发的数据搬移，若用数组实现，会浪费一个存储空间。  </span><br><span class="line">队列为空的判断条件：head == tail。  </span><br><span class="line">队列为满的判断条件：(tail+1) % n == head。  </span><br><span class="line">入队时，tail = (tail+1) % n。  </span><br><span class="line">出队时，head = (head+1) % n。  </span><br><span class="line">(2) 阻塞队列  </span><br><span class="line">当队列为空时，从队列头部取数据会被阻塞，直到队列中有数据才会取出数据并返回。  </span><br><span class="line">当队列已满时，在队列尾部插入数据会被阻塞，直到队列中有空闲位置才会插入数据并返回。  </span><br><span class="line">(3) 并发队列  </span><br><span class="line">线程安全的队列。  </span><br><span class="line">基于数组的循环队列，利用CAS原子操作，可以实现非常高效的并发队列。</span><br><span class="line"></span><br><span class="line">**4.4** 思考：线程池没有空闲线程时，新的任务请求线程资源，线程池该如何处理？  </span><br><span class="line">策略分为2种  </span><br><span class="line">(1) 非阻塞：直接拒绝任务请求。  </span><br><span class="line">(2) 阻塞：使用队列来保存请求，有空闲线程时，再从队列中取出请求继续处理。  </span><br><span class="line">对于阻塞式的策略，基于数组实现的有边界队列更加合适，当已排队的请求数量达到队列大小时，新来的请求会被拒绝，设置合理的队列大小十分关键。</span><br><span class="line"></span><br><span class="line">### 5、跳表</span><br><span class="line"></span><br><span class="line">**5.1** 概念  </span><br><span class="line">(1) 在**有序**链表的基础上，增加多级索引结构（只能用于有序链表）。  </span><br><span class="line">(2) 每x个节点中抽出一个节点作为上一级索引的节点，x一般为2，为了节省空间可以使用更大的值。  </span><br><span class="line">(3) 在每层索引的基础上继续向上构建索引，直到最顶层索引节点的个数到x为止。</span><br><span class="line"></span><br><span class="line">**5.2** 特点  </span><br><span class="line">假设抽取规则中x为2  </span><br><span class="line">(1) 第k级索引格式是第k-1级索引的节点个数的1/2，第k级索引节点个数是n/(2^k)。  </span><br><span class="line">(2) 假设索引有k层，最高级的索引层有2个节点，则n/(2^k) = 2，每层只需要遍历（x + 1）个节点，其时间复杂度为O(logn)。  </span><br><span class="line">(3) 索引占用的空间大小为n/2 + n/4 + ... + 4 + 2，需要额外用接近n个节点的存储空间，空间复杂度为O(n)。</span><br><span class="line"></span><br><span class="line">**5.3** 动态更新  </span><br><span class="line">(1) 插入时，可以通过一个随机函数，来决定将当前节点插入到哪几级索引中（比如随机函数生成了值k，那就将该节点添加到第1级至第k级这些索引中）。  </span><br><span class="line">(2) 删除时，不仅要删除原始链表中的节点，还要删除索引中的节点。</span><br><span class="line"></span><br><span class="line">### 6、散列表</span><br><span class="line"></span><br><span class="line">**6.1** 概念  </span><br><span class="line">又称哈希表；在数组的基础上，通过散列函数将key转化为数组下标，来进行数据的存储。</span><br><span class="line"></span><br><span class="line">**6.2** 特点  </span><br><span class="line">根据key和散列函数计算出散列值作为数组下标，本质上还是数组，拥有数组的随机访问特性。</span><br><span class="line"></span><br><span class="line">**6.3** 散列函数  </span><br><span class="line">(1) 散列函数设计的好坏，决定了散列表冲突的概率大小，直接决定了散列表的性能。  </span><br><span class="line">(2) 散列函数的设计不能太复杂，生成的值要尽可能随机且均匀分布。  </span><br><span class="line"></span><br><span class="line">**6.4** 装填因子  </span><br><span class="line">装填因子 = 填入表的元素个数 / 散列表的长度  </span><br><span class="line">(1) 动态更改散列表容量：当装填因子达到某个阈值时，可以进行动态扩容；小于某个阈值时，也可以进行缩容。  </span><br><span class="line">(2) 高效扩容：将数据转移操作穿插在插入操作中，分批完成，避免一次性的数据转移导致单次操作耗时过长。</span><br><span class="line"></span><br><span class="line">**6.5** 解决散列冲突的方法  </span><br><span class="line">(1) 开放寻址法：如果出现散列冲突，则重新探测下一个空闲位置（线性探测、二次探测、双重散列）；有利于数据结构的序列化，适合数据量小、装填因子小的场景；相比链表法需要更多的内存空间。  </span><br><span class="line">(2) 链表法（工程中最常用的方式）：散列表中的每个元素对应一个链表，所有散列值相同的数据都放到同一个链表中，查找时根据散列值可以取到对应链表，再进行数据的插入、查找和删除操作即可；适合数据量大、装填因子大的场景；相比开放寻址法，有更多的优化策略（例如用红黑树代替链表）。</span><br><span class="line"></span><br><span class="line">**6.6** 工业级的散列表  </span><br><span class="line">(1) 支持快速的查询、插入、删除操作。  </span><br><span class="line">(2) 内存占用合理，不能浪费过多的内存空间。  </span><br><span class="line">(3) 性能稳定，极端情况下性能不能退化到无法接受的程度。</span><br><span class="line"></span><br><span class="line">## 树</span><br><span class="line"></span><br><span class="line">### 1、普通树</span><br><span class="line"></span><br><span class="line">**1.1** 概念  </span><br><span class="line">由n个有限节点组成的一个具有层次关系的集合。</span><br><span class="line"></span><br><span class="line">**1.2** 特性  </span><br><span class="line">(1) 树中的元素称为“节点”。  </span><br><span class="line">(2) 节点的高度：节点到叶子节点到最长路径（边数）。  </span><br><span class="line">(3) 节点的深度：根节点到这个节点所经历的边的个数。  </span><br><span class="line">(4) 节点的层数：节点的深度+1。  </span><br><span class="line">(5) 树的高度：根节点的高度。</span><br><span class="line"></span><br><span class="line">### 2、二叉树</span><br><span class="line"></span><br><span class="line">**2.1** 概念  </span><br><span class="line">每个节点最多有2个子节点的树。</span><br><span class="line"></span><br><span class="line">**2.2** 存储形式  </span><br><span class="line">(1) 基于指针（或引用）的链式存储。  </span><br><span class="line">(2) 基于数组的顺序存储（为了方便计算，根节点会存储在下标为1的位置）。</span><br><span class="line"></span><br><span class="line">**2.3** 遍历方法  </span><br><span class="line">(1) 前序：当前节点 -&gt; 左子树 -&gt; 右子树。  </span><br><span class="line">(2) 中序：左子树 -&gt; 当前节点 -&gt; 右子树。  </span><br><span class="line">(3) 后序：左子树 -&gt; 右子树 -&gt; 当前节点。</span><br><span class="line"></span><br><span class="line">**2.4** 分类  </span><br><span class="line">(1) **满二叉树**：叶子节点全都在最底层，除了叶子节点以外，每个节点都有左右两个子节点。  </span><br><span class="line">(2) **完全二叉树**：最后一层的叶子节点都靠左排列，且除了最后一层之外，其他层的节点个数达到最大（用数组存储时最节省空间）。  </span><br><span class="line">(3) **二叉搜索树**：树中的任意一个节点，其左子树中的每个节点的值，都要小于这个节点的值，而右子树节点的值都大于这个节点的值。  </span><br><span class="line">(4) **平衡二叉树**：二叉树中任意一个节点的左右子树的高度相差不能大于1。  </span><br><span class="line">(5) **平衡二叉搜索树（AVL树）**：既满足平衡二叉树的定义，又满足二叉搜索树的特点（但是很多平衡二叉搜索树其实并没有严格符合上面的定义，例如红黑树）。可以解决普通二叉搜索树在频繁插入和删除过程中，出现的时间复杂度退化的问题。</span><br><span class="line"></span><br><span class="line">**2.5** 二叉搜索树  </span><br><span class="line">(1) 中序遍历二叉搜索树，可以输出升序的数据序列，时间复杂度是O(n)，非常高效。  </span><br><span class="line">(2) 在二叉搜索树中，查找、插入、删除等很多操作的时间复杂度都跟树的高度成正比。两个极端情况的时间复杂度分别是 O(n) 和 O(logn)，分别对应二叉树退化成链表的情况和变成完全二叉树的情况。  </span><br><span class="line">(3) 二叉搜索树删除非叶子节点时，从该节点的左子树中找到值最大的节点，或者从该节点的右子树中找到值最小的节点，来替换当前节点，两种做法都可以。</span><br><span class="line"></span><br><span class="line">**2.6** 平衡二叉搜索树  </span><br><span class="line">(1) 树中每个节点的平衡因子（节点左右子树的高度之差）的取值必须在 &#123;-1, 0, 1&#125; 之内。  </span><br><span class="line">(2) 通过旋转操作来维持平衡（左旋、右旋、左右旋、右左旋）。</span><br><span class="line"></span><br><span class="line">**2.7** 红黑树  </span><br><span class="line">一种**近似平衡**的二叉搜索树，能够保证任何一个节点左右子树的高度差小于两倍。主要解决普通二叉搜索树在数据更新的过程中，复杂度退化的问题；避免了平衡二叉搜索树的频繁调整带来的性能问题。插入、删除、查找操作的时间复杂度都是 O(logn)。  </span><br><span class="line">(1) 每个节点不是红色就是黑色。  </span><br><span class="line">(2) 根节点是黑色的。  </span><br><span class="line">(3) 每个叶子节点都是黑色的，且为空节点（不存储数据）。  </span><br><span class="line">(4) 任何相邻的节点都不能同时为红色（红色节点是被黑色节点隔开的）。  </span><br><span class="line">(5) 任何节点，从该节点到达其可达所有叶子节点的路径中，都包含相同数目的黑色节点。</span><br><span class="line"></span><br><span class="line">**2.8** 思考：为什么常用红黑树而不用平衡二叉搜索树？  </span><br><span class="line">(1) 平衡二叉搜索树是严格按照定义的，高度平衡的，所以查找效率很高。但是为了维持高度的平衡，需要存储额外的高度信息，并且每次插入和删除时都有可能对结构做调整，比较耗时。因此对于有频繁插入和删除操作的数据集合，使用平衡二叉搜索树的成本较高。  </span><br><span class="line">(2) 红黑树只是做到了**近似平衡**，并不是严格的平衡，所以在维护平衡的成本上，要比平衡二叉搜索树要低。并且红黑树的插入、删除、查找各种操作性能都比较稳定，能更好地支撑工业级的应用。</span><br><span class="line"></span><br><span class="line">### 3、递归树</span><br><span class="line"></span><br><span class="line">**3.1** 概念  </span><br><span class="line">将递归过程层层分解所得到的的树型结构就是递归树，用于分析递归算法的时间复杂度。</span><br><span class="line"></span><br><span class="line">**3.2** 案例分析  </span><br><span class="line">(1) 分析快速排序的时间复杂度  </span><br><span class="line">每层分区操作所遍历的数据个数总和是n，只要求出递归树的高度h，时间复杂度就是O(h * n)。  </span><br><span class="line">假设分区时按照一九开进行拆分，快排的结束条件是待排序的分区大小为1（对应树中的叶子节点），从根节点n到叶子节点1，最短路径中每次乘以1/10，直到1为止，此时树的最小高度log(10)n。以此类推，最大高度为log(10/9)n。由此可以得出，快速排序的时间复杂度为O(n * logn)。  </span><br><span class="line">(2) 分析台阶走法的时间复杂度  </span><br><span class="line">问题：假设有n个台阶，每次可以跨1个或2个台阶，计算总共有多少种走法。  </span><br><span class="line">思路：分解到递归树中后，可以看出第k层的加法操作时间消耗是2^(k-1)，n个节点，最大路径为n，最短路径为n/2，因此时间复杂度就介于O(2^n)和O(2^(n/2))之间。  </span><br><span class="line">(3) 分析排列组合的时间复杂度  </span><br><span class="line">问题：找出n个数据的所有排列顺序。  </span><br><span class="line">思路：确定其中1位数据，将问题变为求解剩下n-1个数据的所有排列顺序，逐步分解。时间复杂度为O(n!)。</span><br><span class="line"></span><br><span class="line">## 图</span><br><span class="line"></span><br><span class="line">### 图的存储方式</span><br><span class="line"></span><br><span class="line">**邻接矩阵**  </span><br><span class="line">顶点之间的关系使用二维数组，以矩阵形式来表示。  </span><br><span class="line"></span><br><span class="line">优点：  </span><br><span class="line">(1) 简单、直观，查询效率高。  </span><br><span class="line">(2) 方便计算，可以将许多图的运算转换成矩阵之间的运算。  </span><br><span class="line">缺点：  </span><br><span class="line">(1) 十分浪费存储空间。</span><br><span class="line"></span><br><span class="line">**邻接表**  </span><br><span class="line">顶点之间的关系使用链表来表示。  </span><br><span class="line"></span><br><span class="line">优点：  </span><br><span class="line">(1) 存储方式节省空间。  </span><br><span class="line">缺点：  </span><br><span class="line">(1) 链表不方便查找操作（可以将链表替换成平衡二叉搜索树、跳表、散列表等查询效率高的数据结构）。</span><br><span class="line"></span><br><span class="line">### 1、无向图</span><br><span class="line"></span><br><span class="line">**1.1** 概念  </span><br><span class="line">由顶点和连接顶点的边构成的离散结构。</span><br><span class="line"></span><br><span class="line">**1.2** 特性  </span><br><span class="line">(1) 图中的元素称为“顶点”。  </span><br><span class="line">(2) 边：图中一个顶点与其他任意顶点建立的关系。  </span><br><span class="line">(3) 顶点的度：跟该顶点相连接的边的条数。</span><br><span class="line"></span><br><span class="line">### 2、有向图</span><br><span class="line"></span><br><span class="line">**2.1** 概念  </span><br><span class="line">在无向图的基础上，边有方向的图。</span><br><span class="line"></span><br><span class="line">**2.2** 特性  </span><br><span class="line">(1) 顶点的入度：表示有多少条边指向该顶点。  </span><br><span class="line">(2) 顶点的出度：表示有多少条边以该顶点为起点，指向其他顶点。</span><br><span class="line"></span><br><span class="line">### 3、带权图</span><br><span class="line"></span><br><span class="line">**3.1** 概念  </span><br><span class="line">边有权重的图。</span><br><span class="line"></span><br><span class="line">## 堆</span><br><span class="line"></span><br><span class="line">堆是一种抽象的数据结构，可以迅速找到一些数中的最大值或最小值，需要借助其他数据结构进行实现，常见的堆有二叉堆和斐波那契堆。</span><br><span class="line"></span><br><span class="line">### 1. 二叉堆</span><br><span class="line"></span><br><span class="line">二叉堆是堆的一种常用且简单的实现形式，但并不是最优的实现形式。</span><br><span class="line"></span><br><span class="line">**1.1** 概念  </span><br><span class="line">二叉堆是一种特殊的二叉树。  </span><br><span class="line">(1) 二叉堆是一个完全二叉树。  </span><br><span class="line">(2) 二叉堆中每一个节点的值都必须大于等于（或小于等于）其子树中每个节点的值。  </span><br><span class="line">(3) 每个节点的值都大于等于子树中每个节点值的堆，叫“大顶堆”，反之叫“小顶堆”。</span><br><span class="line"></span><br><span class="line">**1.2** 存储形式  </span><br><span class="line">(1) 使用数组进行存储，因为二叉堆是完全二叉树，用数组存储时可以节省空间，且用下标就可以找到节点。  </span><br><span class="line">(2) 索引为i的节点的左孩子节点的索引是(2\*i+1)，右孩子节点的索引是(2\*i+2)。  </span><br><span class="line">(3) 索引为i的节点的父结点的索引是((i-1)/2)再取整。</span><br><span class="line"></span><br><span class="line">**1.3** 基本操作（默认为“大顶堆”）  </span><br><span class="line">(1) 取最大值  </span><br><span class="line">直接返回根节点即可，时间复杂度是O(1)。  </span><br><span class="line">(2) 插入（从下往上进行堆的调整）  </span><br><span class="line">在数组末尾添加元素，让新插入的节点与父节点对比大小，如果不满足子节点小于等于父节点的大小关系，就互换两个节点，一直重复这个过程，直到父子节点满足关系为止。时间复杂度仅与树的高度有关，为O(logn)。  </span><br><span class="line">(3) 删除堆顶元素（从上往下进行堆的调整）  </span><br><span class="line">删除堆顶元素后，将堆中最后一个元素移动到堆顶，然后从上往下判断父子节点的关系，不满足的进行互换（与较大的孩子节点进行互换），重复该过程，直到父子节点满足关系为止。这样可以保证不出现数组的“空洞”，满足完全二叉树的特性。时间复杂度仅与树的高度有关，为O(logn)。</span><br><span class="line"></span><br><span class="line">**1.4** 应用场景  </span><br><span class="line">(1) 优先级队列（合并有序小文件、高性能定时器）。  </span><br><span class="line">(2) 求Top K问题（维护一个大小为K的小顶堆，遍历数据，将满足条件的存入堆中，堆满时要删除堆顶元素）。  </span><br><span class="line">(3) 求中位数（先排序，再使用2个堆存储数据，1个大顶堆存前面部分，1个小顶堆存后面部分）。</span><br><span class="line"></span><br><span class="line">**1.5** 思考：现有一个包含 10 亿个搜索关键词的日志文件，如何快速获取到 Top 10 最热门的搜索关键词（单机、内存仅1GB）？  </span><br><span class="line">(1) 使用哈希算法，将数据进行分片。创建n个空文件，将关键词计算得到哈希值，将哈希值对n取模，得到文件编号，最终目的是要将相同关键词存在同一个文件中。  </span><br><span class="line">(2) 使用散列表，依次遍历n个文件，记录关键词的出现个数；每次遍历完1个文件，都用堆存储该文件中Top 10的关键词。  </span><br><span class="line">(3) 将所有文件中的Top 10关键词整合，再从这其中求出Top 10的关键词。</span><br><span class="line"></span><br><span class="line">## 并查集</span><br><span class="line"></span><br><span class="line">并查集是一种抽象的数据结构，主要用于解决“组团”或“配对”这种类型的问题。</span><br><span class="line"></span><br><span class="line">### 基本操作</span><br><span class="line">1、makeSet(s)：建立新的并查集，其中包含 s 个单元素集合。  </span><br><span class="line">2、unionSet(x, y)：把元素 x 和元素 y 所在的集合合并；要求 x 和 y 所在的集合不相交，如果相交则不合并。  </span><br><span class="line">3、find(x)：找到元素 x 所在的集合的代表；该操作也可以用于判断两个元素是否位于同一个集合，只要将它们各自的代表比较一下即可。</span><br><span class="line"></span><br><span class="line">### 代码模板</span><br></pre></td></tr></table></figure></p>
+<p>class UnionFind {<br>public:<br>    UnionFind(vector&lt;vector<char>&gt;&amp; grid) {<br>        count = 0;<br>        int m = grid.size();<br>        int n = grid[0].size();</char></p>
+<pre><code>    for (int i = 0; i &lt; m; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            if (grid[i][j] == &apos;1&apos;) {
+                parent.push_back(i * n + j);
+                ++count;
+            } else {
+                parent.push_back(-1);
+            }
+            rank.push_back(0);
+        }
+    }
+}
+
+int find(int i) {
+    if (parent[i] != i) {
+        parent[i] = find(parent[i]);
+    }
+
+    return parent[i];
+}    
+
+void unite(int x, int y) {
+    int rootx = find(x);
+    int rooty = find(y);
+    if (rootx != rooty) {
+        if (rank[rootx] &lt; rank[rooty]) {
+            swap(rootx, rooty);
+        }
+        parent[rooty] = rootx;
+        if (rank[rootx] == rank[rooty]) rank[rootx] {
+            += 1;
+        }
+        --count;
+    }
+}
+
+int getCount() const {
+    return count;
+}
+</code></pre><p>private:<br>    vector<int> parent;<br>    vector<int> rank;<br>    int count;<br>};<br><code>`</code></int></int></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2021/01/02/算法/">
+        算法 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Viva. All Rights Reserved.
+                </p>
+                <a href="http://www.beian.miit.gov.cn" style="color: #767D84">浙ICP备20020134号</a>
+                <!-- <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p> -->
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
