@@ -183,6 +183,8 @@
 <p>5、AUGraphSetNodeInputCallback函数中将Scope设置为Input scope，且不能修改，因此要设置RecordUnit的采集回调时还是要用AudioUnitSetProperty函数。</p>
 <p>6、若调用AUGraphConnectNodeInput进行了连接，那么destNode对应的AudioUnit通过AudioUnitSetProperty设置的RenderCallback回调就不会触发。</p>
 <p>7、AudioUnitAddRenderNotify函数，注册某个AudioUnit渲染的回调。可以在某个AudioUnit被要求渲染前触发，flag为pre-render；可以在该AudioUnit完成其渲染操作后触发，flag为post-render。该回调函数不受AUGraphConnectNodeInput的影响，可以解决第6点中存在的问题。</p>
+<p>8、使用蓝牙耳机进行采集时：若设置了AVAudioSessionPortOverrideSpeaker，则音频帧长与使用内置麦克风或有线耳机时效果一样；若未设置AVAudioSessionPortOverrideSpeaker，则音频帧长是使用内置麦克风或有线耳机时的3倍，数据量也是3倍，会超出AudioUnit的最大处理量。采集链路终点的前一个节点需要配置kAudioUnitProperty_MaximumFramesPerSlice来适配数据量过大的情况。</p>
+<p>9、正常情况下，采集Unit使用VPIO类型，播放Unit使用RemoteIO类型，这样的组合只有在AudioSession的mode设置了VoiceChat、GameChat或VideoChat时才能工作；同时使用VoiceChat模式时，存在有线耳机插拔之后，扬声器音量变小的问题，确定是系统bug，在Apple官方开发者论坛中有说明；使用GameChat和VideoChat时不会出现该问题，因此非游戏App中推荐使用VideoChat模式。</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>经过简单的探索，我深刻地体会到了AudioToolbox框架功能的强大，可以看出目前实践的内容只触及了冰山一角，还有更多与音频处理的内容值得深入挖掘。</p>
 
             <div class="clearfix"></div>
